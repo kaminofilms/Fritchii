@@ -12,6 +12,7 @@
 #include "common/logging.h"
 #include "common/common_types.h"
 #include "common/settings.h"
+#include "core/arm/nce/pauth_mte.h"
 #include "core/hle/kernel/code_set.h"
 #include "core/hle/kernel/k_typed_address.h"
 #include <utility>
@@ -152,7 +153,14 @@ private:
         std::vector<Relocation> m_write_module_pc_relocations{};
         std::vector<Relocation> m_write_module_pc_relocations_pre{};
         std::vector<ModuleTextAddress> m_exclusives{};
+        /// Single-word replacements for PAuth/MTE instructions the host cannot run.
+        std::vector<std::pair<ModuleTextAddress, u32>> m_inline_rewrites{};
     };
+
+    void WritePauthMteRewrite(ModuleDestLabel module_dest, const PauthMteRewrite& rewrite,
+                              oaknut::VectorCodeGenerator& code);
+
+    HostArmFeatures host_features{DetectHostArmFeatures()};
 
     oaknut::VectorCodeGenerator c;
     oaknut::VectorCodeGenerator c_pre;

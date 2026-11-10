@@ -1275,6 +1275,8 @@ if (HAS_NCE)
         arm/nce/instructions.h
         arm/nce/interpreter_visitor.cpp
         arm/nce/interpreter_visitor.h
+        arm/nce/pauth_mte.cpp
+        arm/nce/pauth_mte.h
         arm/nce/patcher.cpp
         arm/nce/patcher.h
         arm/nce/visitor_base.h)

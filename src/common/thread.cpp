@@ -120,6 +120,9 @@ struct ThreadPolicy {
     CoreGroup group;
     s32 nice_value;
     bool has_nice;
+    /// PinCurrentThread's cores; they win over the core group while set.
+    bool pinned{};
+    cpu_set_t pin_mask{};
 };
 
 struct CoreInfo {
@@ -425,10 +428,13 @@ void SetCurrentThreadCoreGroup(CoreGroup group) {
     CpuTopologyState& state = State();
     std::scoped_lock topology_lock{state.topology_mutex};
     EnsureTopologyLocked(state);
-    ApplyCoreGroupLocked(state, tid, effective);
 
     std::scoped_lock policy_lock{state.policy_mutex};
-    AcquirePolicyLocked(state, tid).group = effective;
+    ThreadPolicy& policy = AcquirePolicyLocked(state, tid);
+    policy.group = effective;
+    if (!policy.pinned) {
+        ApplyCoreGroupLocked(state, tid, effective);
+    }
     if (!state.canary_valid) {
         SnapshotCanaryLocked(state);
     }
@@ -441,6 +447,101 @@ void RememberCurrentThreadNice(pid_t tid, s32 nice_value) {
     ThreadPolicy& policy = AcquirePolicyLocked(state, tid);
     policy.nice_value = nice_value;
     policy.has_nice = true;
+}
+
+/// Android counterpart of the Windows thread pinning plan (EDEN_NX2_PIN_THREADS: 0 off, 1 forced).
+/// The GPU front and back threads each get one of the two fastest cores to themselves, the guest
+/// cores share the next tier, and the slowest cluster is left to the rest of the system.
+struct AndroidPinPlan {
+    cpu_set_t front{};
+    cpu_set_t back{};
+    cpu_set_t guest{};
+    bool active{};
+};
+
+const AndroidPinPlan& AndroidPinningPlan() {
+    static const AndroidPinPlan plan = [] {
+        AndroidPinPlan result{};
+        const char* mode = std::getenv("EDEN_NX2_PIN_THREADS");
+        if (mode != nullptr && mode[0] == '0') {
+            LOG_INFO(Common, "Thread pinning: off (EDEN_NX2_PIN_THREADS=0)");
+            return result;
+        }
+        cpu_set_t allowed;
+        CPU_ZERO(&allowed);
+        if (sched_getaffinity(getpid(), sizeof(allowed), &allowed) != 0) {
+            return result;
+        }
+        const s32 total = PossibleCpuCount();
+        auto cores = CollectCores(allowed, total, "cpufreq/cpuinfo_max_freq", false);
+        if (cores.empty() || WeightsAreUniform(cores)) {
+            auto by_capacity = CollectCores(allowed, total, "cpu_capacity", true);
+            if (!by_capacity.empty()) {
+                cores = std::move(by_capacity);
+            }
+        }
+        const bool forced = mode != nullptr && mode[0] == '1';
+        if (cores.size() < (forced ? 3U : 6U)) {
+            LOG_INFO(Common, "Thread pinning: off ({} usable cores)", cores.size());
+            return result;
+        }
+        std::sort(cores.begin(), cores.end(), [](const CoreInfo& lhs, const CoreInfo& rhs) {
+            return lhs.weight != rhs.weight ? lhs.weight > rhs.weight : lhs.cpu > rhs.cpu;
+        });
+        CPU_SET(cores[0].cpu, &result.front);
+        CPU_SET(cores[1].cpu, &result.back);
+        const s64 slowest = cores.back().weight;
+        size_t above_slowest = 0;
+        for (size_t i = 2; i < cores.size(); ++i) {
+            above_slowest += cores[i].weight > slowest ? 1 : 0;
+        }
+        for (size_t i = 2; i < cores.size(); ++i) {
+            if (above_slowest < 4 || cores[i].weight > slowest) {
+                CPU_SET(cores[i].cpu, &result.guest);
+            }
+        }
+        result.active = true;
+        LOG_INFO(Common, "Thread pinning: GPU front on CPU {}, GPU back on CPU {}, {} CPUs for the "
+                         "guest cores",
+                 cores[0].cpu, cores[1].cpu, CPU_COUNT(&result.guest));
+        return result;
+    }();
+    return plan;
+}
+
+std::atomic<u64> android_pinned_gpu_mask{};
+
+void PinCurrentThreadAndroid(Common::PinnedRole role) {
+    const AndroidPinPlan& plan = AndroidPinningPlan();
+    if (!plan.active) {
+        return;
+    }
+    const cpu_set_t& mask = role == Common::PinnedRole::GpuFront  ? plan.front
+                            : role == Common::PinnedRole::GpuBack ? plan.back
+                                                                  : plan.guest;
+    if (CPU_COUNT(&mask) == 0) {
+        return;
+    }
+    const pid_t tid = gettid();
+    if (sched_setaffinity(tid, sizeof(mask), &mask) != 0) {
+        LOG_WARNING(Common, "Could not pin thread {}: {}", tid, ::Common::GetLastErrorMsg());
+        return;
+    }
+    (void)&t_policy_registration;
+    CpuTopologyState& state = State();
+    {
+        std::scoped_lock lock{state.policy_mutex};
+        ThreadPolicy& policy = AcquirePolicyLocked(state, tid);
+        policy.pinned = true;
+        policy.pin_mask = mask;
+    }
+    if (role != Common::PinnedRole::GuestCore) {
+        u64 bits = 0;
+        for (s32 cpu = 0; cpu < 64; ++cpu) {
+            bits |= CPU_ISSET(cpu, &mask) ? (1ULL << cpu) : 0;
+        }
+        android_pinned_gpu_mask.fetch_or(bits, std::memory_order_relaxed);
+    }
 }
 } // Anonymous namespace
 #endif
@@ -772,13 +873,31 @@ void PinCurrentThread(PinnedRole role, int guest_core) {
             pinned_gpu_mask.fetch_or(mask, std::memory_order_relaxed);
         }
     }
+#elif defined(__ANDROID__)
+    (void)guest_core;
+    PinCurrentThreadAndroid(role);
 #else
     (void)role;
 #endif
 }
 
 u64 BackgroundWorkCpuMask() {
-#ifdef _WIN32
+#if defined(__ANDROID__)
+    const u64 pinned = android_pinned_gpu_mask.load(std::memory_order_relaxed);
+    if (pinned == 0) {
+        return 0;
+    }
+    cpu_set_t allowed;
+    CPU_ZERO(&allowed);
+    if (sched_getaffinity(getpid(), sizeof(allowed), &allowed) != 0) {
+        return 0;
+    }
+    u64 rest = 0;
+    for (s32 cpu = 0; cpu < 64; ++cpu) {
+        rest |= CPU_ISSET(cpu, &allowed) && (pinned & (1ULL << cpu)) == 0 ? (1ULL << cpu) : 0;
+    }
+    return std::popcount(rest) >= 2 ? rest : 0;
+#elif defined(_WIN32)
     const u64 pinned = pinned_gpu_mask.load(std::memory_order_relaxed);
     if (pinned == 0) {
         return 0;
@@ -818,6 +937,21 @@ void SetCurrentThreadCpuMask(u64 mask) {
         mask = process;
     }
     SetThreadAffinityMask(GetCurrentThread(), static_cast<DWORD_PTR>(mask));
+#elif defined(__ANDROID__)
+    cpu_set_t set;
+    CPU_ZERO(&set);
+    if (mask == 0) {
+        if (sched_getaffinity(getpid(), sizeof(set), &set) != 0) {
+            return;
+        }
+    } else {
+        for (s32 cpu = 0; cpu < 64; ++cpu) {
+            if ((mask & (1ULL << cpu)) != 0) {
+                CPU_SET(cpu, &set);
+            }
+        }
+    }
+    sched_setaffinity(gettid(), sizeof(set), &set);
 #else
     static_cast<void>(mask);
 #endif
@@ -881,7 +1015,12 @@ void RefreshThreadPolicies() {
             errno == ESRCH) {
             gone = true;
         }
-        if (!gone) {
+        if (!gone && policy.pinned) {
+            if (sched_setaffinity(policy.tid, sizeof(policy.pin_mask), &policy.pin_mask) != 0 &&
+                errno == ESRCH) {
+                gone = true;
+            }
+        } else if (!gone) {
             ApplyCoreGroupLocked(state, policy.tid, policy.group, &gone);
         }
         return gone;

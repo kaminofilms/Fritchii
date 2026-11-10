@@ -98,6 +98,10 @@ bool Patcher::PatchText(std::span<const u8> program_image, const Kernel::CodeSet
     const auto text_words =
         std::span<const u32>{reinterpret_cast<const u32*>(text.data()), text.size() / sizeof(u32)};
 
+    size_t inline_rewrites = 0;
+    size_t trampoline_rewrites = 0;
+    size_t unhandled_rewrites = 0;
+
     // Loop through instructions, patching as needed.
     for (u32 i = ModuleCodeIndex; i < static_cast<u32>(text_words.size()); i++) {
         const u32 inst = text_words[i];
@@ -184,9 +188,36 @@ bool Patcher::PatchText(std::span<const u8> program_image, const Kernel::CodeSet
             continue;
         }
 
+        // Pointer authentication and memory tagging (Switch 2 code) the host CPU lacks.
+        if (const auto rewrite = TranslatePauthMte(inst, host_features);
+            rewrite.kind != PauthMteRewrite::Kind::None) {
+            if (rewrite.kind == PauthMteRewrite::Kind::Inline) {
+                curr_patch->m_inline_rewrites.emplace_back(i, rewrite.words[0]);
+                ++inline_rewrites;
+            } else if (rewrite.kind == PauthMteRewrite::Kind::Trampoline) {
+                bool pre_buffer = false;
+                const auto ret = AddRelocations(pre_buffer);
+                WritePauthMteRewrite(ret, rewrite, pre_buffer ? c_pre : c);
+                ++trampoline_rewrites;
+            } else {
+                ++unhandled_rewrites;
+                LOG_WARNING(Core_ARM, "NCE: no rewrite for {:#010x} at text+{:#x}", inst,
+                            i * sizeof(u32));
+            }
+            continue;
+        }
+
         if (auto exclusive = Exclusive{inst}; exclusive.Verify()) {
             curr_patch->m_exclusives.push_back(i);
         }
+    }
+
+    if (inline_rewrites + trampoline_rewrites + unhandled_rewrites != 0) {
+        LOG_INFO(Core_ARM,
+                 "NCE: host PAuth={} PACGA={} MTE={}; rewrote {} PAuth/MTE instructions in place, {} "
+                 "through the patch section, {} left as is",
+                 host_features.pauth_address, host_features.pauth_generic, host_features.mte,
+                 inline_rewrites, trampoline_rewrites, unhandled_rewrites);
     }
 
     // Determine patching mode for the final relocation step
@@ -372,6 +403,10 @@ bool Patcher::RelocateAndCopy(Common::ProcessAddress load_base, const Kernel::Co
     for (const ModuleTextAddress i : patch.m_exclusives) {
         auto exclusive = Exclusive{text_words[i]};
         text_words[i] = exclusive.AsOrdered();
+    }
+
+    for (const auto& [i, word] : patch.m_inline_rewrites) {
+        text_words[i] = word;
     }
 
     // Remove the patched module size from the total. This is done so total_program_size
@@ -602,6 +637,18 @@ void Patcher::WriteMrsHandler(ModuleDestLabel module_dest, oaknut::XReg dest_reg
     }
 
     // Jump back to the instruction after the emulated MRS.
+    if (&cg == &c_pre)
+        this->BranchToModulePre(module_dest);
+    else
+        this->BranchToModule(module_dest);
+}
+
+void Patcher::WritePauthMteRewrite(ModuleDestLabel module_dest, const PauthMteRewrite& rewrite,
+                                   oaknut::VectorCodeGenerator& cg) {
+    // The sequences are position independent and only touch the instruction's own registers.
+    for (u8 i = 0; i < rewrite.count; ++i) {
+        cg.dw(rewrite.words[i]);
+    }
     if (&cg == &c_pre)
         this->BranchToModulePre(module_dest);
     else
