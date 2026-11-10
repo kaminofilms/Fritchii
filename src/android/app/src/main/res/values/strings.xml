@@ -555,6 +555,27 @@
     <string name="fsr_sharpness">FSR/SGSR sharpness</string>
     <string name="fsr_sharpness_description">Determines how sharpened the image will look while using FSR or SGSR filters</string>
     <string name="renderer_anti_aliasing">Anti-aliasing method</string>
+    <string name="oot_header">Ocarina of Time</string>
+    <string name="oot_30fps">30 FPS mode</string>
+    <string name="oot_30fps_description">Present at 30 FPS to save power and heat. The game keeps its normal speed.</string>
+    <string name="oot_high_refresh">High refresh rate (experimental)</string>
+    <string name="oot_high_refresh_description">Run above 60 FPS up to the cap below. The 30 FPS mode wins over this.</string>
+    <string name="oot_high_refresh_cap">High refresh cap</string>
+    <string name="oot_high_refresh_cap_description">Highest frame rate the high refresh mode presents at.</string>
+    <string name="oot_anti_aliasing">Anti-aliasing</string>
+    <string name="oot_anti_aliasing_description">The game\'s own anti-aliasing, with or without its sharpening pass.</string>
+    <string name="oot_movie_upscale">Video upscaling</string>
+    <string name="oot_movie_upscale_description">How title screen and cutscene videos are upscaled. Automatic uses a fast copy on phones.</string>
+    <string name="oot_aa_game">Game</string>
+    <string name="oot_aa_no_sharpening">Game, no sharpening</string>
+    <string name="oot_movie_automatic">Automatic</string>
+    <string name="oot_movie_bilinear">Bilinear (fast)</string>
+    <string name="oot_movie_game">Game\'s upscaler (slow)</string>
+    <string name="oot_refresh_display">Display refresh rate</string>
+    <string name="oot_refresh_90">90 Hz</string>
+    <string name="oot_refresh_120">120 Hz</string>
+    <string name="oot_refresh_144">144 Hz</string>
+    <string name="oot_refresh_165">165 Hz</string>
 
 
     <string name="advanced">Advanced</string>

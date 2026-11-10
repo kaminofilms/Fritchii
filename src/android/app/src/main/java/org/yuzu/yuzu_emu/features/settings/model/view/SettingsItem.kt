@@ -779,6 +779,47 @@ abstract class SettingsItem(
                 )
             )
             put(
+                SwitchSetting(
+                    BooleanSetting.OOT_30FPS,
+                    titleId = R.string.oot_30fps,
+                    descriptionId = R.string.oot_30fps_description
+                )
+            )
+            put(
+                SwitchSetting(
+                    BooleanSetting.OOT_HIGH_REFRESH,
+                    titleId = R.string.oot_high_refresh,
+                    descriptionId = R.string.oot_high_refresh_description
+                )
+            )
+            put(
+                SingleChoiceSetting(
+                    IntSetting.OOT_HIGH_REFRESH_CAP,
+                    titleId = R.string.oot_high_refresh_cap,
+                    descriptionId = R.string.oot_high_refresh_cap_description,
+                    choicesId = R.array.ootRefreshCapNames,
+                    valuesId = R.array.ootRefreshCapValues
+                )
+            )
+            put(
+                SingleChoiceSetting(
+                    IntSetting.OOT_ANTI_ALIASING,
+                    titleId = R.string.oot_anti_aliasing,
+                    descriptionId = R.string.oot_anti_aliasing_description,
+                    choicesId = R.array.ootAntiAliasingNames,
+                    valuesId = R.array.ootAntiAliasingValues
+                )
+            )
+            put(
+                SingleChoiceSetting(
+                    IntSetting.OOT_MOVIE_UPSCALE,
+                    titleId = R.string.oot_movie_upscale,
+                    descriptionId = R.string.oot_movie_upscale_description,
+                    choicesId = R.array.ootMovieUpscaleNames,
+                    valuesId = R.array.ootMovieUpscaleValues
+                )
+            )
+            put(
                 SingleChoiceSetting(
                     IntSetting.FAST_GPU_TIME,
                     titleId = R.string.fast_gpu_time,

@@ -535,6 +535,14 @@ class SettingsFragmentPresenter(
             }
             add(IntSetting.RENDERER_ANTI_ALIASING.key)
 
+            add(HeaderSetting(R.string.oot_header))
+
+            add(BooleanSetting.OOT_30FPS.key)
+            add(BooleanSetting.OOT_HIGH_REFRESH.key)
+            add(IntSetting.OOT_HIGH_REFRESH_CAP.key)
+            add(IntSetting.OOT_ANTI_ALIASING.key)
+            add(IntSetting.OOT_MOVIE_UPSCALE.key)
+
             add(HeaderSetting(R.string.advanced))
 
             add(IntSetting.RENDERER_ACCURACY.key)

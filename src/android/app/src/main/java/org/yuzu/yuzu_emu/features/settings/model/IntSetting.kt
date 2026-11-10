@@ -26,6 +26,9 @@ enum class IntSetting(override val key: String) : AbstractIntSetting {
     RENDERER_VSYNC("use_vsync"),
     RENDERER_SCALING_FILTER("scaling_filter"),
     RENDERER_ANTI_ALIASING("anti_aliasing"),
+    OOT_ANTI_ALIASING("oot_anti_aliasing"),
+    OOT_MOVIE_UPSCALE("oot_movie_upscale"),
+    OOT_HIGH_REFRESH_CAP("oot_high_refresh_cap"),
     RENDERER_SCREEN_LAYOUT("screen_layout"),
     RENDERER_ASPECT_RATIO("aspect_ratio"),
 

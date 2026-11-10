@@ -9,6 +9,7 @@
 #include "android_settings.h"
 #include "common/android/android_common.h"
 #include "common/android/id_cache.h"
+#include "common/frizti_settings.h"
 #include "common/fs/path_util.h"
 #include "common/logging.h"
 #include "common/settings.h"
@@ -48,8 +49,28 @@ Settings::Setting<T>* getSetting(JNIEnv* env, jstring jkey) {
 
 extern "C" {
 
+// Fritchii's tuned settings (common/frizti_settings.h), applied once per revision as the desktop
+// MainWindow::MigrateFriztiSettings does; later changes by the user are kept.
+static void ApplyFriztiSettings() {
+    namespace Frizti = Settings::Frizti;
+    const u32 applied = Settings::values.frizti_settings_revision.GetValue();
+    if (applied >= Frizti::Revision) {
+        return;
+    }
+    const auto tuned = Frizti::TunedSettings(Settings::values);
+    auto changes = Frizti::ReconcileGlobal(tuned, Frizti::Record{}, true);
+    for (auto& change : Frizti::FixDockedController(Settings::values)) {
+        changes.push_back(std::move(change));
+    }
+    Settings::values.frizti_settings_revision.SetValue(Frizti::Revision);
+    global_config->AndroidConfig::SaveAllValues();
+    LOG_INFO(Frontend, "Frizti settings revision {} -> {}: {}", applied, Frizti::Revision,
+             changes.empty() ? std::string{"already set"} : Frizti::FormatChanges(changes));
+}
+
 void Java_org_yuzu_yuzu_1emu_utils_NativeConfig_initializeGlobalConfig(JNIEnv* env, jobject obj) {
     global_config = std::make_unique<AndroidConfig>();
+    ApplyFriztiSettings();
     FrontendCommon::GenerateSettings();
     ResetFxChainToGlobal();
 }
