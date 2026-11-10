@@ -98,6 +98,9 @@ std::optional<std::vector<u8>> ReadWholeFile(const std::filesystem::path& path) 
 std::filesystem::path RecipesDir() {
 #ifdef _WIN32
     return Common::FS::GetExeDirectory() / "recipes";
+#elif defined(__ANDROID__)
+    // No executable directory of its own: the app's user folder (Android/data/<package>/files).
+    return Common::FS::GetEdenPath(Common::FS::EdenPath::EdenDir) / "recipes";
 #else
     std::error_code error;
     const auto exe = std::filesystem::read_symlink("/proc/self/exe", error);

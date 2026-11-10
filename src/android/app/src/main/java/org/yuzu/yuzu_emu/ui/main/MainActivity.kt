@@ -48,6 +48,8 @@ import androidx.core.net.toUri
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textview.MaterialTextView
 import org.yuzu.yuzu_emu.features.settings.model.BooleanSetting
+import org.yuzu.yuzu_emu.utils.NativeConfig
+import org.yuzu.yuzu_emu.utils.WhatsNew
 import org.yuzu.yuzu_emu.YuzuApplication
 import org.yuzu.yuzu_emu.updater.APKDownloader
 import org.yuzu.yuzu_emu.updater.APKInstaller
@@ -165,6 +167,14 @@ class MainActivity : AppCompatActivity(), ThemeProvider {
 
         if (!firstTimeSetup && NativeLibrary.isUpdateCheckerEnabled() && BooleanSetting.ENABLE_UPDATE_CHECKS.getBoolean()) {
              checkForUpdates()
+        }
+        // Desktop: the first launch asks for Ocarina of Time's frame rate.
+        if (!firstTimeSetup && savedInstanceState == null &&
+            !BooleanSetting.OOT_FPS_ASKED.getBoolean()
+        ) {
+            askOotFrameRate()
+        } else if (!firstTimeSetup && savedInstanceState == null) {
+            WhatsNew.showIfNew(this)
         }
         setInsets()
         applyFullscreenPreference()
@@ -297,6 +307,22 @@ class MainActivity : AppCompatActivity(), ThemeProvider {
     fun displayMultiplayerDialog() {
         val dialog = NetPlayDialog(this)
         dialog.show()
+    }
+
+    private fun askOotFrameRate() {
+        val answer = { fps30: Boolean ->
+            BooleanSetting.OOT_30FPS.setBoolean(fps30)
+            BooleanSetting.OOT_FPS_ASKED.setBoolean(true)
+            NativeConfig.saveGlobalConfig()
+            WhatsNew.showIfNew(this)
+        }
+        MaterialAlertDialogBuilder(this)
+            .setTitle(R.string.oot_fps_question_title)
+            .setMessage(R.string.oot_fps_question)
+            .setCancelable(false)
+            .setPositiveButton(R.string.oot_fps_60) { _, _ -> answer(false) }
+            .setNegativeButton(R.string.oot_fps_30) { _, _ -> answer(true) }
+            .show()
     }
 
     private fun checkKeys() {

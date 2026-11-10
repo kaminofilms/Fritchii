@@ -505,6 +505,77 @@ class GamePropertiesFragment : Fragment() {
                         )
                     )
                 }
+                // Desktop: game list > Prepare shaders (warm-up) / Delete Shader Warm-up.
+                if (!args.game.isHomebrew) {
+                    add(
+                        SubmenuProperty(
+                            R.string.prepare_shader_warmup,
+                            R.string.prepare_shader_warmup_description,
+                            R.drawable.ic_build,
+                            action = {
+                                ProgressDialogFragment.newInstance(
+                                    requireActivity(),
+                                    titleId = R.string.prepare_shader_warmup,
+                                    cancellable = true
+                                ) { progressCallback, messageCallback ->
+                                    val error = NativeLibrary.prepareShaderWarmup(
+                                        args.game.path,
+                                        args.game.programId
+                                    ) { stage, done, total ->
+                                        messageCallback(stage)
+                                        val cancelled = progressCallback(
+                                            total.toLong().coerceAtLeast(1),
+                                            done.toLong()
+                                        )
+                                        if (cancelled) {
+                                            NativeLibrary.cancelShaderWarmup()
+                                        }
+                                    }
+                                    homeViewModel.reloadPropertiesList(true)
+                                    if (error.isEmpty()) {
+                                        MessageDialogFragment.newInstance(
+                                            titleId = R.string.prepare_shader_warmup,
+                                            descriptionId = R.string.shader_warmup_done
+                                        )
+                                    } else {
+                                        MessageDialogFragment.newInstance(
+                                            titleId = R.string.prepare_shader_warmup,
+                                            descriptionString = error
+                                        )
+                                    }
+                                }.show(parentFragmentManager, ProgressDialogFragment.TAG)
+                            }
+                        )
+                    )
+                }
+                if (NativeLibrary.hasShaderWarmup(args.game.programId)) {
+                    add(
+                        SubmenuProperty(
+                            R.string.delete_shader_warmup,
+                            R.string.delete_shader_warmup_description,
+                            R.drawable.ic_delete,
+                            action = {
+                                MessageDialogFragment.newInstance(
+                                    requireActivity(),
+                                    titleId = R.string.delete_shader_warmup,
+                                    descriptionId = R.string.delete_shader_warmup_warning,
+                                    positiveAction = {
+                                        val error =
+                                            NativeLibrary.deleteShaderWarmup(args.game.programId)
+                                        Toast.makeText(
+                                            YuzuApplication.appContext,
+                                            error.ifEmpty {
+                                                getString(R.string.shader_warmup_deleted)
+                                            },
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                        homeViewModel.reloadPropertiesList(true)
+                                    }
+                                ).show(parentFragmentManager, MessageDialogFragment.TAG)
+                            }
+                        )
+                    )
+                }
                 if (NativeLibrary.playTimeManagerGetPlayTime(args.game.programId) > 0) {
                     add(
                         SubmenuProperty(

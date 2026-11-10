@@ -42,6 +42,7 @@ import org.yuzu.yuzu_emu.model.HomeSetting
 import org.yuzu.yuzu_emu.model.HomeViewModel
 import org.yuzu.yuzu_emu.ui.main.MainActivity
 import org.yuzu.yuzu_emu.utils.FileUtil
+import org.yuzu.yuzu_emu.utils.WhatsNew
 import org.yuzu.yuzu_emu.utils.GpuDriverHelper
 import org.yuzu.yuzu_emu.utils.Log
 import org.yuzu.yuzu_emu.utils.LosslessScalingHelper
@@ -256,6 +257,14 @@ class HomeSettingsFragment : Fragment() {
                         )
                         binding.root.findNavController().navigate(action)
                     }
+                )
+            )
+            add(
+                HomeSetting(
+                    R.string.whats_new,
+                    R.string.whats_new_description,
+                    R.drawable.ic_build,
+                    { WhatsNew.show(requireContext()) }
                 )
             )
             add(

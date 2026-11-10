@@ -779,6 +779,24 @@ abstract class SettingsItem(
                 )
             )
             put(
+                SingleChoiceSetting(
+                    IntSetting.FRITCHII_PRECOMPILE,
+                    titleId = R.string.fritchii_precompile,
+                    descriptionId = R.string.fritchii_precompile_description,
+                    choicesId = R.array.fritchiiPrecompileNames,
+                    valuesId = R.array.fritchiiPrecompileValues
+                )
+            )
+            put(
+                SingleChoiceSetting(
+                    IntSetting.RENDERER_MESH_SHADERS,
+                    titleId = R.string.mesh_shaders,
+                    descriptionId = R.string.mesh_shaders_description,
+                    choicesId = R.array.meshShaderNames,
+                    valuesId = R.array.meshShaderValues
+                )
+            )
+            put(
                 SwitchSetting(
                     BooleanSetting.OOT_30FPS,
                     titleId = R.string.oot_30fps,

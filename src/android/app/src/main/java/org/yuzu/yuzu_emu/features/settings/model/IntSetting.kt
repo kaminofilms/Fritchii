@@ -29,6 +29,8 @@ enum class IntSetting(override val key: String) : AbstractIntSetting {
     OOT_ANTI_ALIASING("oot_anti_aliasing"),
     OOT_MOVIE_UPSCALE("oot_movie_upscale"),
     OOT_HIGH_REFRESH_CAP("oot_high_refresh_cap"),
+    FRITCHII_PRECOMPILE("fritchii_precompile"),
+    RENDERER_MESH_SHADERS("mesh_shaders"),
     RENDERER_SCREEN_LAYOUT("screen_layout"),
     RENDERER_ASPECT_RATIO("aspect_ratio"),
 

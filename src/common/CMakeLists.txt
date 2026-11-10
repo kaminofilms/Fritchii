@@ -62,6 +62,8 @@ add_library(
     free_region_manager.h
     frizti_settings.cpp
     frizti_settings.h
+    nx2_switches.cpp
+    nx2_switches.h
     fs/file.cpp
     fs/file.h
     fs/fs.cpp

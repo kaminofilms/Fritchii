@@ -145,6 +145,35 @@ object NativeLibrary {
         callback: (max: Long, progress: Long) -> Boolean
     ): Int
 
+    /** Desktop: game list > Prepare shaders (warm-up). Returns "" when done, else the error. */
+    external fun prepareShaderWarmup(
+        path: String,
+        programId: String,
+        callback: (stage: String, done: Double, total: Double) -> Unit
+    ): String
+
+    external fun cancelShaderWarmup()
+
+    external fun hasShaderWarmup(programId: String): Boolean
+
+    /** Returns "" when deleted, else the error. */
+    external fun deleteShaderWarmup(programId: String): String
+
+    /** Desktop: Emulation > Prepare Shaders Now. False when nothing is left to build. */
+    external fun prepareShadersNow(): Boolean
+
+    external fun stopPrepareShadersNow()
+
+    /** [active, kind (1 compute, 2 graphics, 3 precompiled), done, total] */
+    external fun getShaderWarmupProgress(): LongArray
+
+    external fun isOotRunning(): Boolean
+
+    /** 0 switched, 1 not running, 2 disabled in Add-Ons, 3 unknown code, 4 busy. */
+    external fun setOotHighRefresh(on: Boolean): Int
+
+    external fun isOotHighRefreshOn(): Boolean
+
     external fun doesUpdateMatchProgram(programId: String, updatePath: String): Boolean
 
     external fun initializeGpuDriver(

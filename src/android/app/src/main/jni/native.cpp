@@ -15,6 +15,9 @@
 #include <set>
 #include <sstream>
 #include <span>
+#include <filesystem>
+#include <mutex>
+#include <stop_token>
 #include <string>
 #include <string_view>
 #include <thread>
@@ -94,6 +97,10 @@ extern "C" {
 #include "jni/native.h"
 #include "video_core/frame_gen/lossless_dll.h"
 #include "video_core/renderer_base.h"
+#include "common/frizti_settings.h"
+#include "core/file_sys/patch_manager.h"
+#include "video_core/shader_notify.h"
+#include "video_core/shader_warm/shader_warm_builder.h"
 #include "video_core/renderer_vulkan/renderer_vulkan.h"
 #include "video_core/capture.h"
 #include "video_core/textures/decoders.h"
@@ -388,11 +395,18 @@ void EmulationSession::ShutdownEmulation() {
 void EmulationSession::PauseEmulation() {
     std::scoped_lock lock(m_mutex);
     m_system.Pause();
+    // As the desktop EmuThread: the shader warm-up builds while the game is paused.
+    if (m_system.IsPoweredOn()) {
+        m_system.GPU().ShaderNotify().SetEmulationPaused(true);
+    }
     m_is_paused = true;
 }
 
 void EmulationSession::UnPauseEmulation() {
     std::scoped_lock lock(m_mutex);
+    if (m_system.IsPoweredOn()) {
+        m_system.GPU().ShaderNotify().SetEmulationPaused(false);
+    }
     m_system.Run();
     m_is_paused = false;
 }
@@ -417,6 +431,8 @@ void EmulationSession::RunEmulation() {
         LoadDiskCacheProgress(VideoCore::LoadCallbackStage::Complete, 0, 0);
     }
 
+    // The shader warm-up waits while the game runs (ShaderNotify::WarmMayBuild).
+    m_system.GPU().ShaderNotify().SetEmulationPaused(false);
     void(m_system.Run());
 
     if (m_system.DebuggerEnabled()) {
@@ -783,6 +799,154 @@ int Java_org_yuzu_yuzu_1emu_NativeLibrary_installFileToNand(JNIEnv* env, jobject
         ContentManager::InstallNSP(EmulationSession::GetInstance().System(),
                                    *EmulationSession::GetInstance().System().GetFilesystem(),
                                    Common::Android::GetJString(env, j_file), callback));
+}
+
+namespace {
+std::mutex s_warm_build_mutex;
+std::stop_source s_warm_build_stop;
+} // namespace
+
+// Desktop: game list > "Prepare shaders (warm-up)". Builds the title's warm-up files from the
+// player's own copy; runs on the calling (background) thread. `jcallback(stage, done, total)`
+// reports progress. Returns "" on success, else the error.
+jstring Java_org_yuzu_yuzu_1emu_NativeLibrary_prepareShaderWarmup(JNIEnv* env, jobject instance,
+                                                                  jstring j_path,
+                                                                  jstring j_program_id,
+                                                                  jobject jcallback) {
+    const std::string path = Common::Android::GetJString(env, j_path);
+    const u64 program_id = EmulationSession::GetProgramId(env, j_program_id);
+    auto jlambdaClass = env->GetObjectClass(jcallback);
+    auto jlambdaInvokeMethod = env->GetMethodID(
+        jlambdaClass, "invoke",
+        "(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;");
+    std::stop_token stop;
+    {
+        std::scoped_lock lock{s_warm_build_mutex};
+        s_warm_build_stop = std::stop_source{};
+        stop = s_warm_build_stop.get_token();
+    }
+    const auto progress = [env, jcallback, jlambdaInvokeMethod](const ShaderWarm::Progress& p) {
+        jstring stage = Common::Android::ToJString(env, p.stage);
+        jobject done = Common::Android::ToJDouble(env, static_cast<double>(p.done));
+        jobject total = Common::Android::ToJDouble(env, static_cast<double>(p.total));
+        jobject result = env->CallObjectMethod(jcallback, jlambdaInvokeMethod, stage, done, total);
+        env->DeleteLocalRef(stage);
+        env->DeleteLocalRef(done);
+        env->DeleteLocalRef(total);
+        if (result != nullptr) {
+            env->DeleteLocalRef(result);
+        }
+    };
+    ShaderWarm::Result result;
+    try {
+        result = ShaderWarm::BuildWarmFiles(EmulationSession::GetInstance().System(), path,
+                                            program_id, progress, stop);
+    } catch (const std::exception& e) {
+        result.ok = false;
+        result.error = e.what();
+    }
+    if (stop.stop_requested()) {
+        return Common::Android::ToJString(env, "Stopped");
+    }
+    if (!result.ok) {
+        return Common::Android::ToJString(env, result.error.empty() ? "Failed" : result.error);
+    }
+    LOG_INFO(Frontend, "Shader warm-up for {:016X}: {} compute, {} vertex, {} fragment, {} skipped",
+             program_id, result.compute_programs, result.vertex_programs,
+             result.fragment_programs, result.skipped);
+    return Common::Android::ToJString(env, "");
+}
+
+void Java_org_yuzu_yuzu_1emu_NativeLibrary_cancelShaderWarmup(JNIEnv* env, jobject instance) {
+    std::scoped_lock lock{s_warm_build_mutex};
+    s_warm_build_stop.request_stop();
+}
+
+jboolean Java_org_yuzu_yuzu_1emu_NativeLibrary_hasShaderWarmup(JNIEnv* env, jobject instance,
+                                                               jstring j_program_id) {
+    const u64 program_id = EmulationSession::GetProgramId(env, j_program_id);
+    std::error_code ec;
+    return std::filesystem::exists(ShaderWarm::ComputeWarmPath(program_id), ec) ||
+           std::filesystem::exists(ShaderWarm::GraphicsWarmPath(program_id), ec);
+}
+
+jstring Java_org_yuzu_yuzu_1emu_NativeLibrary_deleteShaderWarmup(JNIEnv* env, jobject instance,
+                                                                 jstring j_program_id) {
+    std::string error;
+    if (!ShaderWarm::DeleteWarmFiles(EmulationSession::GetProgramId(env, j_program_id), &error)) {
+        return Common::Android::ToJString(env, error.empty() ? "Failed" : error);
+    }
+    return Common::Android::ToJString(env, "");
+}
+
+// Desktop: Emulation > Prepare Shaders Now. Returns false when the running game has no warm-up
+// left to build; otherwise the warm-up builds while the game runs until it ends or is stopped.
+jboolean Java_org_yuzu_yuzu_1emu_NativeLibrary_prepareShadersNow(JNIEnv* env, jobject instance) {
+    auto& system = EmulationSession::GetInstance().System();
+    if (!EmulationSession::GetInstance().IsRunning() || !system.IsPoweredOn()) {
+        return false;
+    }
+    auto& notify = system.GPU().ShaderNotify();
+    notify.RequestPrecompile();
+    if (!notify.WarmActive()) {
+        return false;
+    }
+    notify.SetWarmRequested(true);
+    return true;
+}
+
+void Java_org_yuzu_yuzu_1emu_NativeLibrary_stopPrepareShadersNow(JNIEnv* env, jobject instance) {
+    auto& system = EmulationSession::GetInstance().System();
+    if (EmulationSession::GetInstance().IsRunning() && system.IsPoweredOn()) {
+        system.GPU().ShaderNotify().SetWarmRequested(false);
+    }
+}
+
+// [active, kind (1 compute, 2 graphics, 3 precompiled), done, total] of the running warm-up.
+jlongArray Java_org_yuzu_yuzu_1emu_NativeLibrary_getShaderWarmupProgress(JNIEnv* env,
+                                                                        jobject instance) {
+    jlong values[4]{};
+    auto& system = EmulationSession::GetInstance().System();
+    if (EmulationSession::GetInstance().IsRunning() && system.IsPoweredOn()) {
+        const auto& notify = system.GPU().ShaderNotify();
+        const auto warm = notify.GetWarmProgress();
+        values[0] = notify.WarmActive() ? 1 : 0;
+        values[1] = static_cast<jlong>(warm.kind);
+        values[2] = static_cast<jlong>(warm.done);
+        values[3] = static_cast<jlong>(warm.total);
+    }
+    jlongArray array = env->NewLongArray(4);
+    env->SetLongArrayRegion(array, 0, 4, values);
+    return array;
+}
+
+// Desktop: the 60/30 FPS button's IsOotRunning. Not while the game is shutting down.
+jboolean Java_org_yuzu_yuzu_1emu_NativeLibrary_isOotRunning(JNIEnv* env, jobject instance) {
+    auto& system = EmulationSession::GetInstance().System();
+    return EmulationSession::GetInstance().IsRunning() && system.IsPoweredOn() &&
+           !system.IsShuttingDown() &&
+           system.GetApplicationProcessProgramID() == Settings::Frizti::OcarinaOfTimeProgramId;
+}
+
+// Desktop: Ctrl+U (MainWindow::SetOotHighRefresh). Switches the running Ocarina of Time between
+// Dark's routine and the high refresh rate mode without a restart. Returns the
+// FileSys::OotHighRefreshSwitch result: 0 switched, 1 not running, 2 disabled in Add-Ons,
+// 3 unknown code, 4 busy (try again).
+jint Java_org_yuzu_yuzu_1emu_NativeLibrary_setOotHighRefresh(JNIEnv* env, jobject instance,
+                                                             jboolean on) {
+    auto& system = EmulationSession::GetInstance().System();
+    if (!Java_org_yuzu_yuzu_1emu_NativeLibrary_isOotRunning(env, instance)) {
+        return static_cast<jint>(FileSys::OotHighRefreshSwitch::NotRunning);
+    }
+    const auto result = FileSys::SwitchOotHighRefreshLive(system, on);
+    if (result == FileSys::OotHighRefreshSwitch::Switched) {
+        Settings::values.oot_high_refresh.SetValue(on);
+    }
+    return static_cast<jint>(result);
+}
+
+jboolean Java_org_yuzu_yuzu_1emu_NativeLibrary_isOotHighRefreshOn(JNIEnv* env, jobject instance) {
+    return Settings::OotHighRefreshPatched();
 }
 
 jboolean Java_org_yuzu_yuzu_1emu_NativeLibrary_doesUpdateMatchProgram(JNIEnv* env, jobject jobj,

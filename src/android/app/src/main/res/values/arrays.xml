@@ -314,6 +314,30 @@
         <item>2</item>
     </integer-array>
 
+    <string-array name="fritchiiPrecompileNames">
+        <item>@string/fritchii_precompile_off</item>
+        <item>@string/fritchii_precompile_auto</item>
+        <item>@string/fritchii_precompile_always</item>
+    </string-array>
+
+    <integer-array name="fritchiiPrecompileValues">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </integer-array>
+
+    <string-array name="meshShaderNames">
+        <item>@string/mesh_shaders_automatic</item>
+        <item>@string/mesh_shaders_native</item>
+        <item>@string/mesh_shaders_compute</item>
+    </string-array>
+
+    <integer-array name="meshShaderValues">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </integer-array>
+
     <string-array name="ootAntiAliasingNames">
         <item>@string/oot_aa_game</item>
         <item>@string/oot_aa_no_sharpening</item>

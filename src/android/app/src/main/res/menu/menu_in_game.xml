@@ -9,6 +9,23 @@
         android:title="@string/emulation_pause" />
 
     <item
+        android:id="@+id/menu_oot_frame_rate"
+        android:icon="@drawable/ic_build"
+        android:title="@string/oot_menu_fps_60"
+        android:visible="false" />
+
+    <item
+        android:id="@+id/menu_oot_high_refresh"
+        android:icon="@drawable/ic_build"
+        android:title="@string/oot_menu_high_refresh_off"
+        android:visible="false" />
+
+    <item
+        android:id="@+id/menu_prepare_shaders_now"
+        android:icon="@drawable/ic_build"
+        android:title="@string/prepare_shaders_now" />
+
+    <item
         android:id="@+id/menu_quick_overlay"
         android:icon="@drawable/ic_controller"
         android:title="@string/emulation_show_overlay"/>

@@ -1,6 +1,10 @@
 // SPDX-FileCopyrightText: Copyright 2026 Eden Emulator Project
 // SPDX-License-Identifier: GPL-3.0-or-later
 
+#include <algorithm>
+#include <cstdlib>
+#include <filesystem>
+#include <span>
 #include <string>
 
 #include <jni.h>
@@ -11,6 +15,7 @@
 #include "common/android/id_cache.h"
 #include "common/frizti_settings.h"
 #include "common/fs/path_util.h"
+#include "common/nx2_switches.h"
 #include "common/logging.h"
 #include "common/settings.h"
 #include "frontend_common/config.h"
@@ -69,7 +74,25 @@ static void ApplyFriztiSettings() {
 }
 
 void Java_org_yuzu_yuzu_1emu_utils_NativeConfig_initializeGlobalConfig(JNIEnv* env, jobject obj) {
+    // The desktop main() does this before anything reads a switch: Fritchii's built-in tuned
+    // switches, then the player's <user dir>/nx2_switches.txt (Android/data/<package>/files).
+    static const bool switches_applied = [] {
+        const std::filesystem::path file =
+            Common::FS::GetEdenPath(Common::FS::EdenPath::EdenDir) / "nx2_switches.txt";
+        Common::Nx2Switches::Apply(std::span{&file, 1});
+        return true;
+    }();
+    (void)switches_applied;
     global_config = std::make_unique<AndroidConfig>();
+    // nx2_switches.txt or the real environment win over the setting, as on desktop.
+    static const bool precompile_applied = [] {
+        if (std::getenv("EDEN_NX2_PRECOMPILE") == nullptr) {
+            const s32 mode = std::clamp(AndroidSettings::values.fritchii_precompile.GetValue(), 0, 2);
+            setenv("EDEN_NX2_PRECOMPILE", std::to_string(mode).c_str(), 1);
+        }
+        return true;
+    }();
+    (void)precompile_applied;
     ApplyFriztiSettings();
     FrontendCommon::GenerateSettings();
     ResetFxChainToGlobal();

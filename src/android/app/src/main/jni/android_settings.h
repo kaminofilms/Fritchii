@@ -55,6 +55,11 @@ namespace AndroidSettings {
                                                                     Settings::Category::GpuDriver};
 
         Settings::Setting<s32> theme{linkage, 0, "theme", Settings::Category::Android};
+        // EDEN_NX2_PRECOMPILE for this app (the desktop sets it in nx2_switches.txt): 0 off,
+        // 1 automatic (only drivers with their own pipeline cache, as on desktop), 2 always.
+        // Read at app start, like the switches.
+        Settings::Setting<s32> fritchii_precompile{linkage, 1, "fritchii_precompile",
+                                                   Settings::Category::Android};
         Settings::Setting<s32> theme_mode{linkage, -1, "theme_mode", Settings::Category::Android};
         Settings::Setting<s32> static_theme_color{linkage, 0, "static_theme_color", Settings::Category::Android};
         Settings::Setting<bool> black_backgrounds{linkage, false, "black_backgrounds",

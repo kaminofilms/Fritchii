@@ -28,6 +28,7 @@ enum class BooleanSetting(override val key: String) : AbstractBooleanSetting {
     RENDERER_ASYNCHRONOUS_SHADERS("use_asynchronous_shaders"),
     OOT_30FPS("oot_30fps"),
     OOT_HIGH_REFRESH("oot_high_refresh"),
+    OOT_FPS_ASKED("oot_fps_asked"),
     RENDERER_REACTIVE_FLUSHING("use_reactive_flushing"),
     ENABLE_BUFFER_HISTORY("enable_buffer_history"),
     USE_OPTIMIZED_VERTEX_BUFFERS("use_optimized_vertex_buffers"),

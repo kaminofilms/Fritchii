@@ -30,6 +30,12 @@ plugins {
 val autoVersion = (((System.currentTimeMillis() / 1000) - 1451606400) / 10).toInt()
 
 val edenDir = project(":Eden").projectDir
+val fritchiiAssetsDir = file("${layout.buildDirectory.get().asFile}/generated/fritchii-assets")
+val copyFritchiiNotes = tasks.register<Copy>("copyFritchiiNotes") {
+    from("${edenDir}/src/yuzu/fritchii/whats-new.md")
+    into(fritchiiAssetsDir)
+}
+tasks.named("preBuild") { dependsOn(copyFritchiiNotes) }
 
 @Suppress("UnstableApiUsage")
 android {
@@ -270,13 +276,15 @@ android {
 
         // apply nightly suffix I/A
         resValue("string", "app_name_suffixed", "$currentName$suffix")
-        resValue("string", "app_name", "Eden$suffix")
+        resValue("string", "app_name", "$currentName$suffix")
     }
 
     sourceSets {
         named("main") {
             java.srcDir("${edenDir}/externals/generated/sdl/java")
             kotlin.srcDir("${edenDir}/externals/generated/sdl/java")
+            // Fritchii's "What's new" notes (src/yuzu/fritchii/whats-new.md), bundled as on desktop.
+            assets.srcDir(fritchiiAssetsDir)
         }
     }
 }

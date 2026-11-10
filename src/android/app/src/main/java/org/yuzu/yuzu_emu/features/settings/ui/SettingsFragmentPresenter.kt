@@ -535,6 +535,11 @@ class SettingsFragmentPresenter(
             }
             add(IntSetting.RENDERER_ANTI_ALIASING.key)
 
+            add(HeaderSetting(R.string.fritchii_header))
+
+            add(IntSetting.FRITCHII_PRECOMPILE.key)
+            add(IntSetting.RENDERER_MESH_SHADERS.key)
+
             add(HeaderSetting(R.string.oot_header))
 
             add(BooleanSetting.OOT_30FPS.key)

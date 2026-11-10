@@ -705,6 +705,7 @@ class EmulationFragment : Fragment(), SurfaceHolder.Callback {
                 binding.inGameMenu.requestFocus()
                 emulationViewModel.setDrawerOpen(true)
                 updateQuickOverlayMenuEntry(BooleanSetting.SHOW_INPUT_OVERLAY.getBoolean())
+                updateFritchiiMenuEntries()
                 if (drawerView == binding.inGameMenu) {
                     binding.drawerLayout.closeDrawer(binding.quickSettingsSheet)
                 } else if (drawerView == binding.quickSettingsSheet) {
@@ -855,6 +856,26 @@ class EmulationFragment : Fragment(), SurfaceHolder.Callback {
                     }
                     binding.inGameMenu.requestFocus()
                     NativeConfig.saveGlobalConfig()
+                    true
+                }
+
+                R.id.menu_oot_frame_rate -> {
+                    // Desktop: the 60 FPS / 30 FPS button; takes effect at once, even in game.
+                    BooleanSetting.OOT_30FPS.setBoolean(!BooleanSetting.OOT_30FPS.getBoolean())
+                    BooleanSetting.OOT_FPS_ASKED.setBoolean(true)
+                    NativeConfig.saveGlobalConfig()
+                    updateFritchiiMenuEntries()
+                    true
+                }
+
+                R.id.menu_oot_high_refresh -> {
+                    setOotHighRefresh(!NativeLibrary.isOotHighRefreshOn())
+                    true
+                }
+
+                R.id.menu_prepare_shaders_now -> {
+                    binding.drawerLayout.close()
+                    prepareShadersNow()
                     true
                 }
 
@@ -1262,6 +1283,96 @@ class EmulationFragment : Fragment(), SurfaceHolder.Callback {
     private fun openQuickSettingsMenu() {
         binding.drawerLayout.closeDrawer(binding.inGameMenu)
         binding.drawerLayout.openDrawer(binding.quickSettingsSheet)
+    }
+
+    private fun updateFritchiiMenuEntries() {
+        val menu = binding.inGameMenu.menu
+        val oot = NativeLibrary.isOotRunning()
+        menu.findItem(R.id.menu_oot_frame_rate)?.apply {
+            isVisible = oot
+            title = getString(
+                if (BooleanSetting.OOT_30FPS.getBoolean()) {
+                    R.string.oot_menu_fps_30
+                } else {
+                    R.string.oot_menu_fps_60
+                }
+            )
+        }
+        menu.findItem(R.id.menu_oot_high_refresh)?.apply {
+            isVisible = oot
+            title = getString(
+                if (oot && NativeLibrary.isOotHighRefreshOn()) {
+                    R.string.oot_menu_high_refresh_on
+                } else {
+                    R.string.oot_menu_high_refresh_off
+                }
+            )
+        }
+    }
+
+    /** Desktop: Ctrl+U (MainWindow::SetOotHighRefresh), switched live without a restart. */
+    private fun setOotHighRefresh(on: Boolean) {
+        val messageId = when (NativeLibrary.setOotHighRefresh(on)) {
+            0 -> {
+                NativeConfig.saveGlobalConfig()
+                when {
+                    !on -> R.string.oot_high_refresh_now_off
+                    BooleanSetting.OOT_30FPS.getBoolean() -> R.string.oot_high_refresh_30fps_wins
+                    else -> R.string.oot_high_refresh_now_on
+                }
+            }
+            2 -> R.string.oot_high_refresh_disabled_in_addons
+            4 -> R.string.oot_high_refresh_busy
+            3 -> R.string.oot_high_refresh_unknown_code
+            else -> R.string.oot_high_refresh_not_running
+        }
+        Toast.makeText(requireContext(), messageId, Toast.LENGTH_SHORT).show()
+        updateFritchiiMenuEntries()
+    }
+
+    /** Desktop: Emulation > Prepare Shaders Now. */
+    private fun prepareShadersNow() {
+        if (!NativeLibrary.prepareShadersNow()) {
+            MaterialAlertDialogBuilder(requireContext())
+                .setTitle(R.string.prepare_shaders_now)
+                .setMessage(R.string.prepare_shaders_now_nothing_left)
+                .setPositiveButton(android.R.string.ok, null)
+                .show()
+            return
+        }
+        val note = getString(R.string.prepare_shaders_now_note)
+        val dialog = MaterialAlertDialogBuilder(requireContext())
+            .setTitle(R.string.prepare_shaders_now)
+            .setMessage(note)
+            .setCancelable(false)
+            .setPositiveButton(R.string.prepare_shaders_now_stop) { _, _ ->
+                NativeLibrary.stopPrepareShadersNow()
+            }
+            .show()
+        val job = viewLifecycleOwner.lifecycleScope.launch {
+            while (true) {
+                val p = NativeLibrary.getShaderWarmupProgress()
+                if (p[0] == 0L) {
+                    NativeLibrary.stopPrepareShadersNow()
+                    dialog.setMessage(getString(R.string.prepare_shaders_now_ready))
+                    dialog.getButton(android.content.DialogInterface.BUTTON_POSITIVE)
+                        ?.setText(R.string.close)
+                    break
+                }
+                val stage = getString(
+                    when (p[1]) {
+                        1L -> R.string.warmup_stage_compute
+                        2L -> R.string.warmup_stage_graphics
+                        3L -> R.string.warmup_stage_precompiled
+                        else -> R.string.warmup_stage_starting
+                    }
+                )
+                val count = if (p[1] != 0L && p[3] > 0L) " (${p[2]} / ${p[3]})" else ""
+                dialog.setMessage("$stage$count\n\n$note")
+                kotlinx.coroutines.delay(500)
+            }
+        }
+        dialog.setOnDismissListener { job.cancel() }
     }
 
     private fun updateQuickOverlayMenuEntry(isVisible: Boolean) {
