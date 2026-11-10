@@ -1,0 +1,412 @@
+run 2 commit b7396da486f33f4f9869c6935b6f242ff1847d75
+=== errors ===
+4422:C/C++: FAILED: src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/backend/arm64/address_space.cpp.o 
+4425:C/C++: /home/runner/work/Fritchii/Fritchii/src/dynarmic/src/dynarmic/../dynarmic/interface/exclusive_monitor.h:42:14: error: no member named 'atomic_ref' in namespace 'std'
+4428:C/C++: /home/runner/work/Fritchii/Fritchii/src/dynarmic/src/dynarmic/../dynarmic/interface/exclusive_monitor.h:42:25: error: unexpected type name 'VAddr': expected expression
+4431:C/C++: /home/runner/work/Fritchii/Fritchii/src/dynarmic/src/dynarmic/../dynarmic/interface/exclusive_monitor.h:42:30: error: initializer list cannot be used on the right hand side of operator '>'
+4449:* What went wrong:
+4909:  FAILED: src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/backend/arm64/address_space.cpp.o 
+4912:  /home/runner/work/Fritchii/Fritchii/src/dynarmic/src/dynarmic/../dynarmic/interface/exclusive_monitor.h:42:14: error: no member named 'atomic_ref' in namespace 'std'
+4915:  /home/runner/work/Fritchii/Fritchii/src/dynarmic/src/dynarmic/../dynarmic/interface/exclusive_monitor.h:42:25: error: unexpected type name 'VAddr': expected expression
+4918:  /home/runner/work/Fritchii/Fritchii/src/dynarmic/src/dynarmic/../dynarmic/interface/exclusive_monitor.h:42:30: error: initializer list cannot be used on the right hand side of operator '>'
+=== last 400 lines ===
+  [97/1824] Building C object _deps/zstd-build/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/dictBuilder/cover.c.o
+  [98/1824] Building C object _deps/zstd-build/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/dictBuilder/fastcover.c.o
+  [99/1824] Building C object _deps/zstd-build/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/decompress/zstd_decompress.c.o
+  [100/1824] Building C object _deps/zstd-build/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/decompress/zstd_decompress_block.c.o
+  [101/1824] Building C object _deps/zstd-build/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/dictBuilder/zdict.c.o
+  [102/1824] Building C object _deps/zstd-build/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/dictBuilder/divsufsort.c.o
+  [103/1824] Building C object _deps/zstd-build/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/legacy/zstd_v01.c.o
+  [104/1824] Building C object _deps/zstd-build/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/legacy/zstd_v03.c.o
+  [105/1824] Building C object _deps/zstd-build/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/legacy/zstd_v02.c.o
+  [106/1824] Building C object _deps/zstd-build/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/legacy/zstd_v06.c.o
+  [107/1824] Building C object _deps/zstd-build/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/legacy/zstd_v04.c.o
+  [108/1824] Building C object _deps/zstd-build/programs/CMakeFiles/zstd.dir/__/__/__/programs/benchfn.c.o
+  [109/1824] Building C object _deps/zstd-build/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/legacy/zstd_v05.c.o
+  [110/1824] Building C object _deps/zstd-build/programs/CMakeFiles/zstd.dir/__/__/__/programs/zstdcli_trace.c.o
+  [111/1824] Building C object _deps/zstd-build/programs/CMakeFiles/zstd.dir/__/__/__/programs/benchzstd.c.o
+  [112/1824] Building C object _deps/zstd-build/programs/CMakeFiles/zstd.dir/__/__/__/programs/datagen.c.o
+  [113/1824] Building C object _deps/zstd-build/programs/CMakeFiles/zstd.dir/__/__/__/programs/fileio_asyncio.c.o
+  [114/1824] Building C object _deps/zstd-build/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/legacy/zstd_v07.c.o
+  [115/1824] Building C object _deps/zstd-build/programs/CMakeFiles/zstd.dir/__/__/__/programs/timefn.c.o
+  [116/1824] Building C object _deps/zstd-build/programs/CMakeFiles/zstd.dir/__/__/__/programs/dibio.c.o
+  [117/1824] Building C object _deps/zstd-build/programs/CMakeFiles/zstd.dir/__/__/__/programs/lorem.c.o
+  [118/1824] Building C object _deps/zstd-build/programs/CMakeFiles/zstd-frugal.dir/__/__/__/programs/timefn.c.o
+  [119/1824] Building C object _deps/zstd-build/programs/CMakeFiles/zstd-frugal.dir/__/__/__/programs/fileio_asyncio.c.o
+  [120/1824] Building C object _deps/zstd-build/lib/CMakeFiles/libzstd_static.dir/__/__/__/lib/compress/zstd_lazy.c.o
+  [121/1824] Linking C static library _deps/zstd-build/lib/libzstd.a
+  [122/1824] Building C object _deps/zstd-build/programs/CMakeFiles/zstd.dir/__/__/__/programs/util.c.o
+  [123/1824] Building C object _deps/zlib-build/CMakeFiles/zlibstatic.dir/adler32.c.o
+  [124/1824] Building C object _deps/zstd-build/programs/CMakeFiles/zstd.dir/__/__/__/programs/fileio.c.o
+  [125/1824] Building C object _deps/zlib-build/CMakeFiles/zlibstatic.dir/compress.c.o
+  [126/1824] Building C object _deps/zstd-build/programs/CMakeFiles/zstd-frugal.dir/__/__/__/programs/util.c.o
+  [127/1824] Building C object _deps/zstd-build/programs/CMakeFiles/zstd.dir/__/__/__/programs/zstdcli.c.o
+  [128/1824] Building C object _deps/zlib-build/CMakeFiles/zlibstatic.dir/crc32.c.o
+  [129/1824] Building C object _deps/zstd-build/programs/CMakeFiles/zstd-frugal.dir/__/__/__/programs/zstdcli.c.o
+  [130/1824] Linking C executable bin/zstd
+  [131/1824] Building C object _deps/zlib-build/CMakeFiles/zlibstatic.dir/gzclose.c.o
+  [132/1824] Building C object _deps/zlib-build/CMakeFiles/zlibstatic.dir/gzwrite.c.o
+  [133/1824] Building C object _deps/zlib-build/CMakeFiles/zlibstatic.dir/gzread.c.o
+  [134/1824] Building C object _deps/zlib-build/CMakeFiles/zlibstatic.dir/gzlib.c.o
+  [135/1824] Building C object _deps/zlib-build/CMakeFiles/zlibstatic.dir/deflate.c.o
+  [136/1824] Building C object _deps/zlib-build/CMakeFiles/zlibstatic.dir/inftrees.c.o
+  [137/1824] Building C object _deps/zlib-build/CMakeFiles/zlibstatic.dir/inffast.c.o
+  [138/1824] Building C object _deps/zlib-build/CMakeFiles/zlibstatic.dir/infback.c.o
+  [139/1824] Building C object _deps/zlib-build/CMakeFiles/zlibstatic.dir/uncompr.c.o
+  [140/1824] Building C object _deps/zlib-build/CMakeFiles/zlibstatic.dir/zutil.c.o
+  [141/1824] Building C object _deps/zlib-build/CMakeFiles/zlibstatic.dir/inflate.c.o
+  [142/1824] Building C object _deps/zstd-build/programs/CMakeFiles/zstd-frugal.dir/__/__/__/programs/fileio.c.o
+  [143/1824] Building C object _deps/zlib-build/test/CMakeFiles/zlib_static_example.dir/example.c.o
+  [144/1824] Building C object _deps/zlib-build/test/CMakeFiles/zlib_static_example64.dir/example.c.o
+  [145/1824] Linking C executable bin/zstd-frugal
+  [146/1824] Building C object _deps/zlib-build/test/CMakeFiles/static_minigzip.dir/minigzip.c.o
+  [147/1824] Building C object _deps/zlib-build/CMakeFiles/zlibstatic.dir/trees.c.o
+  [148/1824] Linking C static library _deps/zlib-build/libz.a
+  [149/1824] Building C object _deps/zlib-build/test/CMakeFiles/infcover.dir/infcover.c.o
+  [150/1824] Linking C executable bin/zlib_static_example
+  [151/1824] Linking C executable bin/static_minigzip
+  [152/1824] Linking C executable bin/infcover
+  [153/1824] Linking C executable bin/zlib_static_example64
+  [154/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/src/opus_multistream.c.o
+  [155/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/src/opus_decoder.c.o
+  [156/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/src/repacketizer.c.o
+  [157/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/src/extensions.c.o
+  [158/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/src/opus.c.o
+  [159/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/src/mapping_matrix.c.o
+  [160/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/src/opus_projection_decoder.c.o
+  [161/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/code_signs.c.o
+  [162/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/src/opus_multistream_decoder.c.o
+  [163/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/src/opus_projection_encoder.c.o
+  [164/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/src/mlp_data.c.o
+  [165/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/src/opus_encoder.c.o
+  [166/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/src/mlp.c.o
+  [167/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/init_decoder.c.o
+  [168/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/CNG.c.o
+  [169/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/decode_frame.c.o
+  [170/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/src/opus_multistream_encoder.c.o
+  [171/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/decode_parameters.c.o
+  [172/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/decode_indices.c.o
+  [173/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/decode_core.c.o
+  [174/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/decode_pulses.c.o
+  [175/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/decoder_set_fs.c.o
+  [176/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/encode_indices.c.o
+  [177/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/interpolate.c.o
+  [178/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/gain_quant.c.o
+  [179/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/dec_API.c.o
+  [180/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/src/analysis.c.o
+  [181/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/encode_pulses.c.o
+  [182/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/NLSF_decode.c.o
+  [183/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/LP_variable_cutoff.c.o
+  [184/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/tables_gain.c.o
+  [185/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/shell_coder.c.o
+  [186/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/NSQ.c.o
+  [187/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/tables_LTP.c.o
+  [188/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/tables_NLSF_CB_WB.c.o
+  [189/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/NSQ_del_dec.c.o
+  [190/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/tables_NLSF_CB_NB_MB.c.o
+  [191/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/PLC.c.o
+  [192/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/enc_API.c.o
+  [193/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/quant_LTP_gains.c.o
+  [194/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/tables_other.c.o
+  [195/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/tables_pitch_lag.c.o
+  [196/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/tables_pulses_per_block.c.o
+  [197/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/control_audio_bandwidth.c.o
+  [198/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/NLSF_VQ.c.o
+  [199/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/process_NLSFs.c.o
+  [200/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/VAD.c.o
+  [201/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/VQ_WMat_EC.c.o
+  [202/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/NLSF_del_dec_quant.c.o
+  [203/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/stereo_MS_to_LR.c.o
+  [204/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/check_control_input.c.o
+  [205/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/control_SNR.c.o
+  [206/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/stereo_LR_to_MS.c.o
+  [207/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/ana_filt_bank_1.c.o
+  [208/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/bwexpander_32.c.o
+  [209/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/bwexpander.c.o
+  [210/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/biquad_alt.c.o
+  [211/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/debug.c.o
+  [212/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/decode_pitch.c.o
+  [213/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/init_encoder.c.o
+  [214/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/lin2log.c.o
+  [215/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/inner_prod_aligned.c.o
+  [216/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/A2NLSF.c.o
+  [217/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/control_codec.c.o
+  [218/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/LPC_inv_pred_gain.c.o
+  [219/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/log2lin.c.o
+  [220/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/LPC_analysis_filter.c.o
+  [221/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/table_LSF_cos.c.o
+  [222/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/NLSF_stabilize.c.o
+  [223/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/pitch_est_tables.c.o
+  [224/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/NLSF_VQ_weights_laroia.c.o
+  [225/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/NLSF2A.c.o
+  [226/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/resampler_down2.c.o
+  [227/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/resampler_down2_3.c.o
+  [228/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/resampler_private_AR2.c.o
+  [229/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/resampler.c.o
+  [230/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/resampler_rom.c.o
+  [231/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/resampler_private_IIR_FIR.c.o
+  [232/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/resampler_private_up2_HQ.c.o
+  [233/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/sort.c.o
+  [234/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/sum_sqr_shift.c.o
+  [235/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/sigm_Q15.c.o
+  [236/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/resampler_private_down_FIR.c.o
+  [237/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/stereo_quant_pred.c.o
+  [238/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/stereo_decode_pred.c.o
+  [239/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/stereo_encode_pred.c.o
+  [240/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/stereo_find_predictor.c.o
+  [241/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/LPC_fit.c.o
+  [242/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/celt/celt.c.o
+  [243/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/celt/entcode.c.o
+  [244/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/celt/entdec.c.o
+  [245/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/celt/cwrs.c.o
+  [246/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/celt/quant_bands.c.o
+  [247/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/celt/celt_decoder.c.o
+  [248/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/celt/entenc.c.o
+  [249/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/celt/bands.c.o
+  [250/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/celt/laplace.c.o
+  [251/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/celt/modes.c.o
+  [252/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/celt/mathops.c.o
+  [253/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/celt/mdct.c.o
+  [254/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/celt/celt_lpc.c.o
+  [255/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/celt/rate.c.o
+  [256/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/celt/pitch.c.o
+  [257/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/celt/kiss_fft.c.o
+  [258/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/float/energy_FLP.c.o
+  [259/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/celt/celt_encoder.c.o
+  [260/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/float/apply_sine_window_FLP.c.o
+  [261/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/celt/vq.c.o
+  [262/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/float/find_LTP_FLP.c.o
+  [263/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/float/find_LPC_FLP.c.o
+  [264/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/float/corrMatrix_FLP.c.o
+  [265/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/float/find_pitch_lags_FLP.c.o
+  [266/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/float/encode_frame_FLP.c.o
+  [267/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/float/find_pred_coefs_FLP.c.o
+  [268/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/float/LTP_analysis_filter_FLP.c.o
+  [269/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/float/LTP_scale_ctrl_FLP.c.o
+  [270/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/float/LPC_analysis_filter_FLP.c.o
+  [271/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/float/regularize_correlations_FLP.c.o
+  [272/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/float/process_gains_FLP.c.o
+  [273/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/float/noise_shape_analysis_FLP.c.o
+  [274/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/float/warped_autocorrelation_FLP.c.o
+  [275/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/float/residual_energy_FLP.c.o
+  [276/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/float/burg_modified_FLP.c.o
+  [277/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/float/wrappers_FLP.c.o
+  [278/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/float/k2a_FLP.c.o
+  [279/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/float/autocorrelation_FLP.c.o
+  [280/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/float/inner_product_FLP.c.o
+  [281/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/float/bwexpander_FLP.c.o
+  [282/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/float/schur_FLP.c.o
+  [283/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/float/LPC_inv_pred_gain_FLP.c.o
+  [284/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/celt/arm/armcpu.c.o
+  [285/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/float/scale_copy_vector_FLP.c.o
+  [286/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/float/sort_FLP.c.o
+  [287/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/arm/arm_silk_map.c.o
+  [288/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/dnn/arm/arm_dnn_map.c.o
+  [289/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/float/scale_vector_FLP.c.o
+  [290/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/celt/arm/arm_celt_map.c.o
+  [291/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/float/pitch_analysis_core_FLP.c.o
+  [292/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/arm/NSQ_neon.c.o
+  [293/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/celt/arm/pitch_neon_intr.c.o
+  [294/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/celt/arm/celt_neon_intr.c.o
+  [295/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/arm/biquad_alt_neon_intr.c.o
+  [296/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/arm/LPC_inv_pred_gain_neon_intr.c.o
+  [297/1824] Building C object _deps/opus-build/CMakeFiles/opus.dir/silk/arm/NSQ_del_dec_neon_intr.c.o
+  [298/1824] Building C object _deps/enet-build/CMakeFiles/enet.dir/callbacks.c.o
+  [299/1824] Building CXX object externals/CMakeFiles/bc_decoder.dir/bc_decoder/bc_decoder.cpp.o
+  [300/1824] Linking CXX static library externals/libbc_decoder.a
+  [301/1824] Building CXX object externals/CMakeFiles/tz.dir/tz/tz/tz.cpp.o
+  [302/1824] Linking CXX static library externals/libtz.a
+  [303/1824] Building CXX object externals/CMakeFiles/reshadefx.dir/__/.cache/cpm/reshade/v6.8.0/source/effect_expression.cpp.o
+  [304/1824] Building CXX object externals/CMakeFiles/reshadefx.dir/__/.cache/cpm/reshade/v6.8.0/source/effect_parser_exp.cpp.o
+  [305/1824] Building CXX object externals/CMakeFiles/stb.dir/stb/stb_dxt.cpp.o
+  [306/1824] Linking CXX static library externals/libstb.a
+  [307/1824] Linking C static library _deps/opus-build/libopus.a
+  [308/1824] Building C object _deps/enet-build/CMakeFiles/enet.dir/compress.c.o
+  [309/1824] Building CXX object externals/CMakeFiles/reshadefx.dir/__/.cache/cpm/reshade/v6.8.0/source/effect_lexer.cpp.o
+  [310/1824] Building C object _deps/enet-build/CMakeFiles/enet.dir/host.c.o
+  [311/1824] Building C object _deps/enet-build/CMakeFiles/enet.dir/list.c.o
+  [312/1824] Building C object _deps/enet-build/CMakeFiles/enet.dir/packet.c.o
+  [313/1824] Building C object _deps/enet-build/CMakeFiles/enet.dir/peer.c.o
+  [314/1824] Building C object _deps/enet-build/CMakeFiles/enet.dir/unix.c.o
+  [315/1824] Building C object _deps/enet-build/CMakeFiles/enet.dir/win32.c.o
+  [316/1824] Building C object _deps/enet-build/CMakeFiles/enet.dir/protocol.c.o
+  [317/1824] Linking C static library _deps/enet-build/libenet.a
+  [318/1824] Building C object _deps/cubeb-build/CMakeFiles/cubeb.dir/src/cubeb.c.o
+  [319/1824] Building CXX object externals/CMakeFiles/reshadefx.dir/__/.cache/cpm/reshade/v6.8.0/source/effect_parser_stmt.cpp.o
+  [320/1824] Building CXX object externals/CMakeFiles/reshadefx.dir/__/.cache/cpm/reshade/v6.8.0/source/effect_preprocessor.cpp.o
+  [321/1824] Building CXX object _deps/cubeb-build/CMakeFiles/cubeb.dir/src/cubeb_mixer.cpp.o
+  [322/1824] Building C object _deps/cubeb-build/CMakeFiles/cubeb.dir/src/cubeb_strings.c.o
+  [323/1824] Building CXX object _deps/cubeb-build/CMakeFiles/cubeb.dir/src/cubeb_audio_dump.cpp.o
+  [324/1824] Building CXX object _deps/cubeb-build/CMakeFiles/cubeb.dir/src/cubeb_log.cpp.o
+  [325/1824] Building CXX object _deps/cubeb-build/CMakeFiles/cubeb.dir/src/cubeb_utils.cpp.o
+  [326/1824] Building CXX object _deps/cubeb-build/CMakeFiles/cubeb.dir/src/cubeb-jni.cpp.o
+  [327/1824] Building CXX object _deps/cubeb-build/CMakeFiles/cubeb.dir/src/cubeb_resampler.cpp.o
+  [328/1824] Building C object _deps/cubeb-build/CMakeFiles/cubeb.dir/src/cubeb_audiotrack.c.o
+  [329/1824] Building C object _deps/cubeb-build/CMakeFiles/speex.dir/subprojects/speex/resample.c.o
+  [330/1824] Generating include/nx_tzdb/base.h
+  [331/1824] Building CXX object _deps/cubeb-build/CMakeFiles/cubeb.dir/src/cubeb_opensl.cpp.o
+  [332/1824] Building CXX object _deps/cubeb-build/CMakeFiles/cubeb.dir/src/cubeb_aaudio.cpp.o
+  [333/1824] Linking CXX static library _deps/cubeb-build/libcubeb.a
+  [334/1824] Generating include/nx_tzdb/africa.h
+  [335/1824] Generating include/nx_tzdb/america_argentina.h
+  [336/1824] Generating include/nx_tzdb/america_indiana.h
+  [337/1824] Generating include/nx_tzdb/america_kentucky.h
+  [338/1824] Generating include/nx_tzdb/america_north_dakota.h
+  [339/1824] Generating include/nx_tzdb/antarctica.h
+  [340/1824] Generating include/nx_tzdb/arctic.h
+  [341/1824] Generating include/nx_tzdb/zoneinfo.h
+  [342/1824] Generating include/nx_tzdb/atlantic.h
+  [343/1824] Building CXX object externals/CMakeFiles/reshadefx.dir/__/.cache/cpm/reshade/v6.8.0/source/effect_codegen_spirv.cpp.o
+  [344/1824] Generating include/nx_tzdb/brazil.h
+  [345/1824] Generating include/nx_tzdb/australia.h
+  [346/1824] Generating include/nx_tzdb/chile.h
+  [347/1824] Generating include/nx_tzdb/etc.h
+  [348/1824] Generating include/nx_tzdb/canada.h
+  [349/1824] Generating include/nx_tzdb/indian.h
+  [350/1824] Generating include/nx_tzdb/mexico.h
+  [351/1824] Generating include/nx_tzdb/pacific.h
+  [352/1824] Generating include/nx_tzdb/us.h
+  [353/1824] Building CXX object _deps/libadrenotools-build/CMakeFiles/adrenotools.dir/src/bcenabler.cpp.o
+  [354/1824] Generating include/nx_tzdb/asia.h
+  [355/1824] Building CXX object _deps/libadrenotools-build/CMakeFiles/adrenotools.dir/src/driver.cpp.o
+  /home/runner/work/Fritchii/Fritchii/.cache/cpm/libadrenotools/8ba23b42d7/src/driver.cpp:117:5: warning: missing field 'id' initializer [-Wmissing-designated-field-initializers]
+    117 |     };
+        |     ^
+  /home/runner/work/Fritchii/Fritchii/.cache/cpm/libadrenotools/8ba23b42d7/src/driver.cpp:153:5: warning: missing field 'va_len' initializer [-Wmissing-designated-field-initializers]
+    153 |     };
+        |     ^
+  2 warnings generated.
+  [356/1824] Building CXX object _deps/linkernsbypass-build/CMakeFiles/linkernsbypass.dir/elf_soname_patcher.cpp.o
+  [357/1824] Building CXX object _deps/linkernsbypass-build/CMakeFiles/linkernsbypass.dir/android_linker_ns.cpp.o
+  /home/runner/work/Fritchii/Fritchii/.cache/cpm/linkernsbypass/aa3975893d/android_linker_ns.cpp:68:5: warning: missing field 'reserved_addr' initializer [-Wmissing-designated-field-initializers]
+     68 |     };
+        |     ^
+  /home/runner/work/Fritchii/Fritchii/.cache/cpm/linkernsbypass/aa3975893d/android_linker_ns.cpp:116:5: warning: missing field 'reserved_addr' initializer [-Wmissing-designated-field-initializers]
+    116 |     };
+        |     ^
+  /home/runner/work/Fritchii/Fritchii/.cache/cpm/linkernsbypass/aa3975893d/android_linker_ns.cpp:106:5: warning: 'snprintf' will always be truncated; specified size is 3, but format string expands to at least 4 [-Wformat-truncation]
+    106 |     snprintf(sonameOverwrite.data(), sonameOverwrite.size(), "%03u", TargetId++);
+        |     ^
+  3 warnings generated.
+  [358/1824] Linking CXX static library _deps/linkernsbypass-build/liblinkernsbypass.a
+  [359/1824] Linking CXX static library _deps/libadrenotools-build/libadrenotools.a
+  [360/1824] Building C object _deps/libadrenotools-build/src/hook/CMakeFiles/main_hook.dir/main_hook.c.o
+  [361/1824] Generating include/nx_tzdb/europe.h
+  [362/1824] Building C object _deps/libadrenotools-build/src/hook/CMakeFiles/file_redirect_hook.dir/file_redirect_hook.c.o
+  [363/1824] Building C object _deps/libadrenotools-build/src/hook/CMakeFiles/gsl_alloc_hook.dir/gsl_alloc_hook.c.o
+  [364/1824] Building CXX object _deps/libadrenotools-build/src/hook/CMakeFiles/hook_impl.dir/hook_impl.cpp.o
+  /home/runner/work/Fritchii/Fritchii/.cache/cpm/libadrenotools/8ba23b42d7/src/hook/hook_impl.cpp:158:13: warning: missing field 'reserved_addr' initializer [-Wmissing-designated-field-initializers]
+    158 |             };
+        |             ^
+  /home/runner/work/Fritchii/Fritchii/.cache/cpm/libadrenotools/8ba23b42d7/src/hook/hook_impl.cpp:218:9: warning: missing field 'id' initializer [-Wmissing-designated-field-initializers]
+    218 |         };
+        |         ^
+  /home/runner/work/Fritchii/Fritchii/.cache/cpm/libadrenotools/8ba23b42d7/src/hook/hook_impl.cpp:227:9: warning: missing field 'flags' initializer [-Wmissing-designated-field-initializers]
+    227 |         };
+        |         ^
+  3 warnings generated.
+  [365/1824] Linking CXX shared library /home/runner/work/Fritchii/Fritchii/src/android/app/build/intermediates/cxx/RelWithDebInfo/122g1u45/obj/arm64-v8a/libhook_impl.so
+  [366/1824] Linking CXX shared library /home/runner/work/Fritchii/Fritchii/src/android/app/build/intermediates/cxx/RelWithDebInfo/122g1u45/obj/arm64-v8a/libmain_hook.so
+  [367/1824] Linking CXX shared library /home/runner/work/Fritchii/Fritchii/src/android/app/build/intermediates/cxx/RelWithDebInfo/122g1u45/obj/arm64-v8a/libfile_redirect_hook.so
+  [368/1824] Linking CXX shared library /home/runner/work/Fritchii/Fritchii/src/android/app/build/intermediates/cxx/RelWithDebInfo/122g1u45/obj/arm64-v8a/libgsl_alloc_hook.so
+  [369/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/common/crypto/aes.cpp.o
+  [370/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/common/fp/op/FPRecipEstimate.cpp.o
+  [371/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/common/crypto/crc32.cpp.o
+  [372/1824] Building C object externals/glad/CMakeFiles/glad.dir/src/glad.c.o
+  [373/1824] Linking C static library externals/glad/libglad.a
+  [374/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/backend/block_range_information.cpp.o
+  [375/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/common/fp/fused.cpp.o
+  [376/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/common/fp/op/FPCompare.cpp.o
+  [377/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/common/fp/op/FPConvert.cpp.o
+  [378/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/common/fp/op/FPMulAdd.cpp.o
+  [379/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/common/fp/op/FPRecipExponent.cpp.o
+  [380/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/common/fp/op/FPRecipStepFused.cpp.o
+  [381/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/common/fp/op/FPRSqrtEstimate.cpp.o
+  [382/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/common/fp/op/FPRoundInt.cpp.o
+  [383/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/common/fp/op/FPRSqrtStepFused.cpp.o
+  [384/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/frontend/A32/a32_types.cpp.o
+  [385/1824] Generating include/nx_tzdb/america.h
+  [386/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/common/fp/process_exception.cpp.o
+  [387/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/common/fp/op/FPToFixed.cpp.o
+  [388/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/common/math_util.cpp.o
+  [389/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/common/fp/unpacked.cpp.o
+  [390/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/common/fp/process_nan.cpp.o
+  [391/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/common/llvm_disassemble.cpp.o
+  [392/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/common/u128.cpp.o
+  [393/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/frontend/A32/a32_location_descriptor.cpp.o
+  [394/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/frontend/imm.cpp.o
+  [395/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/ir/location_descriptor.cpp.o
+  [396/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/frontend/A64/a64_types.cpp.o
+  [397/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/ir/basic_block.cpp.o
+  /home/runner/work/Fritchii/Fritchii/src/dynarmic/src/dynarmic/ir/basic_block.cpp:75:59: warning: unused parameter 'terminal_variant' [-Wunused-parameter]
+     75 | static std::string TerminalToString(const Term::Terminal& terminal_variant) noexcept {
+        |                                                           ^
+  1 warning generated.
+  [398/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/ir/microinstruction.cpp.o
+  [399/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/ir/type.cpp.o
+  [400/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/ir/value.cpp.o
+  [401/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/ir/opcodes.cpp.o
+  [402/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/frontend/A32/a32_ir_emitter.cpp.o
+  [403/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/ir/opt_passes.cpp.o
+  [404/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/frontend/A32/translate/conditional_state.cpp.o
+  [405/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/frontend/A64/a64_ir_emitter.cpp.o
+  [406/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/frontend/A64/a64_location_descriptor.cpp.o
+  [407/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/backend/arm64/a32_jitstate.cpp.o
+  [408/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/frontend/A32/translate/translate_thumb.cpp.o
+  [409/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/frontend/A32/translate/a32_translate.cpp.o
+  [410/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/backend/arm64/abi.cpp.o
+  [411/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/backend/arm64/address_space.cpp.o
+  FAILED: src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/backend/arm64/address_space.cpp.o 
+  /usr/bin/ccache /usr/local/lib/android/sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android33 --sysroot=/usr/local/lib/android/sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DARCHITECTURE_arm64=1 -DBOOST_CONTAINER_NO_LIB -DBOOST_CONTAINER_STATIC_LINK -DBOOST_CONTEXT_EXPORT="" -DBOOST_CONTEXT_NO_LIB="" -DBOOST_CONTEXT_STATIC_LINK="" -DBOOST_DATE_TIME_NO_LIB -DBOOST_DATE_TIME_STATIC_LINK -DBOOST_FILESYSTEM_NO_LIB -DBOOST_FILESYSTEM_STATIC_LINK=1 -DCPPHTTPLIB_OPENSSL_SUPPORT -DCPPHTTPLIB_USE_NON_BLOCKING_GETADDRINFO -DCPPHTTPLIB_ZLIB_SUPPORT -DCPPHTTPLIB_ZSTD_SUPPORT -DDYNARMIC_ENABLE_CPU_FEATURE_DETECTION=1 -DFMT_USE_USER_DEFINED_LITERALS=1 -DHAS_NCE=1 -DMCL_IGNORE_ASSERTS=1 -DYUZU_BOOST_v1 -DYUZU_BUNDLED_OPENSSL -D_LARGEFILE64_SOURCE=1 -I/home/runner/work/Fritchii/Fritchii/src/. -I/home/runner/work/Fritchii/Fritchii/src/dynarmic/src/dynarmic/.. -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/oaknut/v2.0.3/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/fmt/12.1.0/include -I/home/runner/work/Fritchii/Fritchii/src/android/app/.cxx/RelWithDebInfo/122g1u45/arm64-v8a/src -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/algorithm/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/array/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/assert/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/config/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/throw_exception/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/bind/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/core/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/concept_check/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/preprocessor/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/type_traits/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/exception/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/smart_ptr/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/tuple/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/function/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/iterator/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/detail/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/fusion/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/container_hash/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/describe/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/mp11/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/function_types/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/mpl/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/predef/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/utility/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/io/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/typeof/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/optional/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/range/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/conversion/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/regex/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/unordered/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/heap/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/intrusive/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/move/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/parameter/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/icl/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/container/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/date_time/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/lexical_cast/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/numeric/conversion/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/tokenizer/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/winapi/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/rational/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/integer/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/pool/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/filesystem/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/system/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/compat/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/variant2/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/context/include -I/home/runner/work/Fritchii/Fritchii/src/android/app/.cxx/RelWithDebInfo/122g1u45/arm64-v8a/_deps/zlib-build -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/zlib/v1.3.2 -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/zstd/33618c8/build/cmake/../../lib -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/nlohmann_json/v3.12.0/include -I/home/runner/work/Fritchii/Fritchii/externals/./stb -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/variant/include -I/home/runner/work/Fritchii/Fritchii/.cache/cpm/boost/1.92.0/libs/type_index/include -isystem /home/runner/work/Fritchii/Fritchii/.cache/cpm/httplib/v0.46.0 -isystem /home/runner/work/Fritchii/Fritchii/.cache/cpm/openssl/4.0.1-1788234794-b64f68a94e-android-aarch64/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -Wno-error=unused -Wno-error=unused-function -fexperimental-library -O2 -g -DNDEBUG -std=c++20 -fPIC -Wall -Wextra -Wcast-qual -pedantic -Wno-missing-braces -fno-rtti -fbracket-depth=1024 -Wno-unused-command-line-argument -Wno-shadow -pthread -MD -MT src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/backend/arm64/address_space.cpp.o -MF src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/backend/arm64/address_space.cpp.o.d -o src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/backend/arm64/address_space.cpp.o -c /home/runner/work/Fritchii/Fritchii/src/dynarmic/src/dynarmic/backend/arm64/address_space.cpp
+  In file included from /home/runner/work/Fritchii/Fritchii/src/dynarmic/src/dynarmic/backend/arm64/address_space.cpp:22:
+  /home/runner/work/Fritchii/Fritchii/src/dynarmic/src/dynarmic/../dynarmic/interface/exclusive_monitor.h:42:14: error: no member named 'atomic_ref' in namespace 'std'
+     42 |         std::atomic_ref<VAddr>{exclusive_addresses[processor_id]}.store(masked_address, std::memory_order_release);
+        |         ~~~~~^
+  /home/runner/work/Fritchii/Fritchii/src/dynarmic/src/dynarmic/../dynarmic/interface/exclusive_monitor.h:42:25: error: unexpected type name 'VAddr': expected expression
+     42 |         std::atomic_ref<VAddr>{exclusive_addresses[processor_id]}.store(masked_address, std::memory_order_release);
+        |                         ^
+  /home/runner/work/Fritchii/Fritchii/src/dynarmic/src/dynarmic/../dynarmic/interface/exclusive_monitor.h:42:30: error: initializer list cannot be used on the right hand side of operator '>'
+     42 |         std::atomic_ref<VAddr>{exclusive_addresses[processor_id]}.store(masked_address, std::memory_order_release);
+        |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  3 errors generated.
+  [412/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/backend/arm64/emit_arm64.cpp.o
+  [413/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/backend/arm64/emit_arm64_a32.cpp.o
+  [414/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/frontend/A32/translate/translate_arm.cpp.o
+  [415/1824] Building CXX object src/dynarmic/src/dynarmic/CMakeFiles/dynarmic.dir/frontend/A64/translate/a64_translate.cpp.o
+  [416/1824] Building CXX object externals/CMakeFiles/reshadefx.dir/__/.cache/cpm/reshade/v6.8.0/source/effect_symbol_table.cpp.o
+  ninja: build stopped: subcommand failed.
+  
+  C++ build system [build] failed while executing:
+      /usr/local/lib/android/sdk/cmake/3.31.5/bin/ninja \
+        -C \
+        /home/runner/work/Fritchii/Fritchii/src/android/app/.cxx/RelWithDebInfo/122g1u45/arm64-v8a \
+        file_redirect_hook \
+        gsl_alloc_hook \
+        hook_impl \
+        infcover \
+        lz4cli \
+        main_hook \
+        static_minigzip \
+        yuzu-android \
+        zlib_static_example \
+        zlib_static_example64 \
+        zstd \
+        zstd-frugal
+    from /home/runner/work/Fritchii/Fritchii/src/android/app
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 5m 3s
+2 actionable tasks: 2 executed
+-- Done! APK and AAB artifacts are in /home/runner/work/Fritchii/Fritchii/artifacts
+ls: cannot access '/home/runner/work/Fritchii/Fritchii/artifacts/': No such file or directory
