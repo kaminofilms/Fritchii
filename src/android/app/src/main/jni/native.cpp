@@ -801,6 +801,8 @@ int Java_org_yuzu_yuzu_1emu_NativeLibrary_installFileToNand(JNIEnv* env, jobject
                                    Common::Android::GetJString(env, j_file), callback));
 }
 
+namespace ShaderWarm = VideoCommon::ShaderWarm;
+
 namespace {
 std::mutex s_warm_build_mutex;
 std::stop_source s_warm_build_stop;

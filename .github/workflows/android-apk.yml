@@ -74,6 +74,14 @@ jobs:
           key: ccache-android-${{ github.sha }}
           restore-keys: ccache-android-
 
+      - name: Compile Kotlin first
+        id: kotlin
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          cd src/android && chmod +x ./gradlew
+          ./gradlew compileMainlineReleaseKotlin --continue 2>&1 | tee ../../kotlin.log
+
       - name: Build APK
         env:
           CCACHE: "true"
@@ -94,7 +102,7 @@ jobs:
           if-no-files-found: error
 
       - name: Publish failure log to the ci-logs branch
-        if: failure()
+        if: failure() || steps.kotlin.outcome == 'failure'
         env:
           RUN: ${{ github.run_number }}
           SHA: ${{ github.sha }}
@@ -104,6 +112,8 @@ jobs:
             echo "run ${RUN} commit ${SHA}"
             echo "=== errors ==="
             grep -nE "error:|error [A-Z]+[0-9]+|FAILED:|undefined reference|CMake Error|e: file|What went wrong" build.log | head -300
+            echo "=== kotlin ==="
+            [ -f kotlin.log ] && grep -nE "^e: |What went wrong" kotlin.log | head -100
             echo "=== last 400 lines ==="
             tail -n 400 build.log
           } > "$RUNNER_TEMP/run-${RUN}.txt"
