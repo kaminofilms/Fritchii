@@ -6,6 +6,9 @@ on:
       - android-port
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 concurrency:
   group: android-apk-${{ github.ref }}
   cancel-in-progress: true
@@ -70,9 +73,11 @@ jobs:
           CCACHE: "true"
           GIT_TAG_NAME: fritchii-android-${{ github.run_number }}
         run: |
+          set -o pipefail
           ccache --zero-stats
           sh .ci/android/build.sh -t standard -b Release \
-            -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache
+            -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache \
+            2>&1 | tee build.log
           ccache --show-stats
 
       - name: Upload APK
@@ -81,6 +86,31 @@ jobs:
           name: Fritchii-Android-${{ github.run_number }}
           path: artifacts/*.apk
           if-no-files-found: error
+
+      - name: Publish failure log to the ci-logs branch
+        if: failure()
+        env:
+          RUN: ${{ github.run_number }}
+          SHA: ${{ github.sha }}
+        run: |
+          [ -f build.log ] || echo "no build.log (failed before the build step)" > build.log
+          {
+            echo "run ${RUN} commit ${SHA}"
+            echo "=== errors ==="
+            grep -nE "error:|error [A-Z]+[0-9]+|FAILED:|undefined reference|CMake Error|e: file|What went wrong" build.log | head -300
+            echo "=== last 400 lines ==="
+            tail -n 400 build.log
+          } > "$RUNNER_TEMP/run-${RUN}.txt"
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@users.noreply.github.com"
+          cd "$RUNNER_TEMP"
+          rm -rf logs && mkdir logs && cd logs && git init -q
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          if git fetch -q --depth 1 origin ci-logs; then git checkout -q FETCH_HEAD; else git checkout -q --orphan ci-logs; fi
+          cp "$RUNNER_TEMP/run-${RUN}.txt" .
+          git add "run-${RUN}.txt"
+          git commit -q -m "android-apk run ${RUN} failed"
+          git push -q origin HEAD:ci-logs
 
       - name: Upload build logs on failure
         if: failure()
