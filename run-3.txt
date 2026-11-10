@@ -1,0 +1,408 @@
+run 3 commit 7ebc8935b89fe69bd138258a5edb142707e60799
+=== errors ===
+6025:C/C++: FAILED: src/core/CMakeFiles/core.dir/hle/service/am/service/self_controller.cpp.o 
+6028:C/C++: /home/runner/work/Fritchii/Fritchii/src/./core/hle/service/nx2_gsv.h:2752:29: error: no matching function for call to 'max'
+6701:* What went wrong:
+8765:  FAILED: src/core/CMakeFiles/core.dir/hle/service/am/service/self_controller.cpp.o 
+8768:  /home/runner/work/Fritchii/Fritchii/src/./core/hle/service/nx2_gsv.h:2752:29: error: no matching function for call to 'max'
+=== last 400 lines ===
+  [1482/1824] Building CXX object src/core/CMakeFiles/core.dir/loader/nup.cpp.o
+  [1483/1824] Building CXX object src/core/CMakeFiles/core.dir/loader/xci.cpp.o
+  [1484/1824] Building CXX object src/core/CMakeFiles/core.dir/loader/nso.cpp.o
+  [1485/1824] Building CXX object src/core/CMakeFiles/core.dir/perf_stats.cpp.o
+  [1486/1824] Building CXX object src/core/CMakeFiles/core.dir/memory/cheat_engine.cpp.o
+  [1487/1824] Building CXX object src/core/CMakeFiles/core.dir/memory/dmnt_cheat_vm.cpp.o
+  [1488/1824] Building CXX object src/core/CMakeFiles/core.dir/tools/freezer.cpp.o
+  [1489/1824] Building ASM object src/core/CMakeFiles/core.dir/arm/nce/arm_nce.s.o
+  [1490/1824] Building CXX object src/core/CMakeFiles/core.dir/tools/renderdoc.cpp.o
+  [1491/1824] Building CXX object src/core/CMakeFiles/core.dir/internal_network/wifi_scanner_dummy.cpp.o
+  [1492/1824] Building CXX object src/core/CMakeFiles/core.dir/arm/nce/pauth_mte.cpp.o
+  [1493/1824] Building CXX object src/core/CMakeFiles/core.dir/reporter.cpp.o
+  [1494/1824] Building CXX object src/core/CMakeFiles/core.dir/__/common/android/id_cache.cpp.o
+  [1495/1824] Building CXX object src/core/CMakeFiles/core.dir/arm/nce/arm_nce.cpp.o
+  [1496/1824] Building CXX object src/core/CMakeFiles/core.dir/arm/dynarmic/dynarmic_cp15.cpp.o
+  [1497/1824] Building CXX object src/core/CMakeFiles/core.dir/arm/dynarmic/arm_dynarmic_64.cpp.o
+  [1498/1824] Building CXX object src/core/CMakeFiles/core.dir/arm/dynarmic/dynarmic_exclusive_monitor.cpp.o
+  [1499/1824] Building CXX object src/core/CMakeFiles/core.dir/arm/nce/patcher.cpp.o
+  [1500/1824] Building CXX object src/core/CMakeFiles/core.dir/arm/dynarmic/arm_dynarmic_32.cpp.o
+  [1501/1824] Building CXX object src/core/CMakeFiles/core.dir/memory.cpp.o
+  [1502/1824] Building CXX object src/core/CMakeFiles/core.dir/hle/service/jit/jit_code_memory.cpp.o
+  [1503/1824] Building CXX object src/core/CMakeFiles/core.dir/hle/service/jit/jit_context.cpp.o
+  [1504/1824] Building CXX object src/core/CMakeFiles/core.dir/hle/service/ssl/ssl_backend_openssl.cpp.o
+  /home/runner/work/Fritchii/Fritchii/src/core/hle/service/ssl/ssl_backend_openssl.cpp:162:18: warning: 'SSL_set1_host' is deprecated: Since OpenSSL 4.0 [-Wdeprecated-declarations]
+    162 |             if (!SSL_set1_host(ssl, hostname)) {
+        |                  ^
+  /home/runner/work/Fritchii/Fritchii/.cache/cpm/openssl/4.0.1-1788234794-b64f68a94e-android-aarch64/include/openssl/ssl.h:2002:1: note: 'SSL_set1_host' has been explicitly marked deprecated here
+   2002 | OSSL_DEPRECATEDIN_4_0 __owur int SSL_set1_host(SSL *s, const char *host);
+        | ^
+  /home/runner/work/Fritchii/Fritchii/.cache/cpm/openssl/4.0.1-1788234794-b64f68a94e-android-aarch64/include/openssl/macros.h:207:31: note: expanded from macro 'OSSL_DEPRECATEDIN_4_0'
+    207 | #define OSSL_DEPRECATEDIN_4_0 OSSL_DEPRECATED(4.0)
+        |                               ^
+  /home/runner/work/Fritchii/Fritchii/.cache/cpm/openssl/4.0.1-1788234794-b64f68a94e-android-aarch64/include/openssl/macros.h:57:20: note: expanded from macro 'OSSL_DEPRECATED'
+     57 |     __attribute__((deprecated("Since OpenSSL " #since)))
+        |                    ^
+  /home/runner/work/Fritchii/Fritchii/src/core/hle/service/ssl/ssl_backend_openssl.cpp:192:13: warning: 'SSL_set1_host' is deprecated: Since OpenSSL 4.0 [-Wdeprecated-declarations]
+    192 |             SSL_set1_host(ssl, nullptr);
+        |             ^
+  /home/runner/work/Fritchii/Fritchii/.cache/cpm/openssl/4.0.1-1788234794-b64f68a94e-android-aarch64/include/openssl/ssl.h:2002:1: note: 'SSL_set1_host' has been explicitly marked deprecated here
+   2002 | OSSL_DEPRECATEDIN_4_0 __owur int SSL_set1_host(SSL *s, const char *host);
+        | ^
+  /home/runner/work/Fritchii/Fritchii/.cache/cpm/openssl/4.0.1-1788234794-b64f68a94e-android-aarch64/include/openssl/macros.h:207:31: note: expanded from macro 'OSSL_DEPRECATEDIN_4_0'
+    207 | #define OSSL_DEPRECATEDIN_4_0 OSSL_DEPRECATED(4.0)
+        |                               ^
+  /home/runner/work/Fritchii/Fritchii/.cache/cpm/openssl/4.0.1-1788234794-b64f68a94e-android-aarch64/include/openssl/macros.h:57:20: note: expanded from macro 'OSSL_DEPRECATED'
+     57 |     __attribute__((deprecated("Since OpenSSL " #since)))
+        |                    ^
+  2 warnings generated.
+  [1505/1824] Building CXX object src/core/CMakeFiles/core.dir/hle/service/jit/jit.cpp.o
+  [1506/1824] Building CXX object src/core/CMakeFiles/core.dir/__/common/android/android_common.cpp.o
+  [1507/1824] Building CXX object src/core/CMakeFiles/core.dir/__/common/fs/fs_android.cpp.o
+  [1508/1824] Building CXX object src/core/CMakeFiles/core.dir/__/common/android/applets/software_keyboard.cpp.o
+  [1509/1824] Building CXX object src/core/CMakeFiles/core.dir/__/common/android/multiplayer/multiplayer.cpp.o
+  [1510/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/adsp/apps/opus/opus_decode_object.cpp.o
+  [1511/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/adsp/apps/opus/opus_decoder.cpp.o
+  [1512/1824] Building CXX object src/core/CMakeFiles/core.dir/__/common/android/applets/web_browser.cpp.o
+  [1513/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/audio_manager.cpp.o
+  [1514/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/audio_render_manager.cpp.o
+  [1515/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/adsp/apps/opus/opus_multistream_decode_object.cpp.o
+  [1516/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/adsp/adsp.cpp.o
+  [1517/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/adsp/apps/audio_renderer/command_list_processor.cpp.o
+  [1518/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/adsp/apps/audio_renderer/audio_renderer.cpp.o
+  [1519/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/audio_event.cpp.o
+  [1520/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/audio_in_manager.cpp.o
+  [1521/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/audio_core.cpp.o
+  [1522/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/in/audio_in.cpp.o
+  [1523/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/behavior/behavior_info.cpp.o
+  [1524/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/audio_out_manager.cpp.o
+  [1525/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/opus/decoder.cpp.o
+  [1526/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/in/audio_in_system.cpp.o
+  [1527/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/opus/batch_decoder.cpp.o
+  [1528/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/opus/hardware_opus.cpp.o
+  [1529/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/device/device_session.cpp.o
+  [1530/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/opus/decoder_manager.cpp.o
+  [1531/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/out/audio_out.cpp.o
+  [1532/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/data_source/adpcm.cpp.o
+  [1533/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/audio_device.cpp.o
+  [1534/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/out/audio_out_system.cpp.o
+  [1535/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/data_source/decode.cpp.o
+  [1536/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/behavior/info_updater.cpp.o
+  [1537/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/data_source/pcm_int16.cpp.o
+  [1538/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/data_source/pcm_float.cpp.o
+  [1539/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/audio_renderer.cpp.o
+  [1540/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/effect/biquad_filter.cpp.o
+  [1541/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/effect/compressor.cpp.o
+  [1542/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/effect/capture.cpp.o
+  [1543/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/effect/aux_.cpp.o
+  [1544/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/effect/i3dl2_reverb.cpp.o
+  [1545/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/mix/depop_for_mix_buffers.cpp.o
+  [1546/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/effect/delay.cpp.o
+  [1547/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/effect/multi_tap_biquad_filter.cpp.o
+  [1548/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/effect/light_limiter.cpp.o
+  [1549/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/effect/reverb.cpp.o
+  [1550/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/mix/depop_prepare.cpp.o
+  [1551/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/mix/copy_mix.cpp.o
+  [1552/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/mix/clear_mix.cpp.o
+  [1553/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/mix/mix_ramp_grouped.cpp.o
+  [1554/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/mix/mix_ramp.cpp.o
+  [1555/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/mix/mix.cpp.o
+  [1556/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/mix/volume_ramp.cpp.o
+  [1557/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/mix/volume.cpp.o
+  [1558/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/resample/resample.cpp.o
+  [1559/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/performance/performance.cpp.o
+  [1560/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/resample/downmix_6ch_to_2ch.cpp.o
+  [1561/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/sink/circular_buffer.cpp.o
+  [1562/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/resample/upsample.cpp.o
+  [1563/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/sink/device.cpp.o
+  [1564/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/command_generator.cpp.o
+  [1565/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/command_buffer.cpp.o
+  [1566/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/effect/biquad_filter.cpp.o
+  [1567/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/effect/compressor.cpp.o
+  [1568/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/command/command_processing_time_estimator.cpp.o
+  [1569/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/effect/aux_.cpp.o
+  [1570/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/effect/buffer_mixer.cpp.o
+  [1571/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/effect/effect_context.cpp.o
+  [1572/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/effect/capture.cpp.o
+  [1573/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/effect/delay.cpp.o
+  [1574/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/effect/light_limiter.cpp.o
+  [1575/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/memory/memory_pool_info.cpp.o
+  [1576/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/performance/detail_aspect.cpp.o
+  [1577/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/effect/reverb.cpp.o
+  [1578/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/effect/i3dl2.cpp.o
+  [1579/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/mix/mix_info.cpp.o
+  [1580/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/mix/mix_context.cpp.o
+  [1581/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/nodes/edge_matrix.cpp.o
+  [1582/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/performance/entry_aspect.cpp.o
+  [1583/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/nodes/node_states.cpp.o
+  [1584/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/sink/circular_buffer_sink_info.cpp.o
+  [1585/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/memory/pool_mapper.cpp.o
+  [1586/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/performance/performance_manager.cpp.o
+  [1587/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/splitter/splitter_context.cpp.o
+  [1588/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/sink/device_sink_info.cpp.o
+  [1589/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/sink/sink_context.cpp.o
+  [1590/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/sink/sink_info_base.cpp.o
+  [1591/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/splitter/splitter_destinations_data.cpp.o
+  [1592/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/splitter/splitter_info.cpp.o
+  [1593/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/upsampler/upsampler_manager.cpp.o
+  [1594/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/sink/sink_stream.cpp.o
+  [1595/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/voice/voice_context.cpp.o
+  [1596/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/system_manager.cpp.o
+  [1597/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/voice/voice_info.cpp.o
+  [1598/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/renderer/system.cpp.o
+  [1599/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/sink/cubeb_sink.cpp.o
+  [1600/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/sink/sink_details.cpp.o
+  [1601/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/sink/sdl3_sink.cpp.o
+  [1602/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/__/common/fs/fs_android.cpp.o
+  [1603/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/__/common/android/multiplayer/multiplayer.cpp.o
+  [1604/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/__/common/android/android_common.cpp.o
+  [1605/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/__/common/android/id_cache.cpp.o
+  [1606/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/__/common/android/applets/software_keyboard.cpp.o
+  [1607/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/cdma_pusher.cpp.o
+  [1608/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/compatible_formats.cpp.o
+  [1609/1824] Building CXX object src/audio_core/CMakeFiles/audio_core.dir/__/common/android/applets/web_browser.cpp.o
+  [1610/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/dirty_flags.cpp.o
+  [1611/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/control/channel_state_cache.cpp.o
+  [1612/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/control/scheduler.cpp.o
+  [1613/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/macro.cpp.o
+  [1614/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/engines/sw_blitter/blitter.cpp.o
+  [1615/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/control/channel_state.cpp.o
+  [1616/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/buffer_cache/buffer_cache.cpp.o
+  [1617/1824] Building CXX object src/core/CMakeFiles/core.dir/arm/nce/interpreter_visitor.cpp.o
+  [1618/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/engines/fermi_2d.cpp.o
+  [1619/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/engines/draw_manager.cpp.o
+  [1620/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/engines/sw_blitter/converter.cpp.o
+  [1621/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/dma_pusher.cpp.o
+  [1622/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/engines/engine_upload.cpp.o
+  [1623/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/fsr.cpp.o
+  [1624/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/engines/kepler_memory.cpp.o
+  [1625/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/game_dlss_status.cpp.o
+  [1626/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/engines/maxwell_dma.cpp.o
+  [1627/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/framebuffer_config.cpp.o
+  [1628/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/host1x/codecs/decoder.cpp.o
+  [1629/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/host1x/ffmpeg.cpp.o
+  [1630/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/host1x/codecs/h264.cpp.o
+  [1631/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/engines/puller.cpp.o
+  [1632/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/host1x/codecs/vp8.cpp.o
+  [1633/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/engines/maxwell_3d.cpp.o
+  [1634/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/host1x/control.cpp.o
+  [1635/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/host1x/codecs/vp9.cpp.o
+  [1636/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/engines/kepler_compute.cpp.o
+  [1637/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/host1x/host1x.cpp.o
+  [1638/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/host1x/syncpoint_manager.cpp.o
+  [1639/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/host1x/gpu_device_memory_manager.cpp.o
+  [1640/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/host1x/nx2_video_decoder.cpp.o
+  [1641/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/host1x/nvdec.cpp.o
+  [1642/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/host1x/vic.cpp.o
+  [1643/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_base.cpp.o
+  [1644/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/nx2_precompile.cpp.o
+  [1645/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/pipeline_cache_files.cpp.o
+  [1646/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/gpu_thread.cpp.o
+  [1647/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/nx2_debug_control.cpp.o
+  [1648/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/gpu_split.cpp.o
+  [1649/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/present/window_adapt_pass.cpp.o
+  [1650/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/memory_manager.cpp.o
+  [1651/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_null/renderer_null.cpp.o
+  [1652/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/gpu.cpp.o
+  [1653/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/nx2_recipe.cpp.o
+  [1654/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_null/null_rasterizer.cpp.o
+  [1655/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/present/filters.cpp.o
+  [1656/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/present/fsr.cpp.o
+  [1657/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/nx2_qmd_prediction.cpp.o
+  [1658/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/present/fsr3.cpp.o
+  [1659/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/present/fxaa.cpp.o
+  [1660/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/present/smaa.cpp.o
+  [1661/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/present/util.cpp.o
+  [1662/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/present/sgsr.cpp.o
+  [1663/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/fixed_pipeline_state.cpp.o
+  [1664/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/pipeline_statistics.cpp.o
+  [1665/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/maxwell_to_vk.cpp.o
+  [1666/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_blit_screen.cpp.o
+  [1667/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_dlss_network_probe.cpp.o
+  [1668/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/blit_image.cpp.o
+  [1669/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/present/layer.cpp.o
+  [1670/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_command_pool.cpp.o
+  [1671/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_fsr4_upscaler.cpp.o
+  [1672/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_fsr3_upscaler.cpp.o
+  [1673/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/vulkan_common/ffx_runtime.cpp.o
+  [1674/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/renderer_vulkan.cpp.o
+  [1675/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_compute_pass.cpp.o
+  [1676/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_ocarina_camera_motion.cpp.o
+  [1677/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_buffer_cache.cpp.o
+  [1678/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_cooperative_hmma_test.cpp.o
+  [1679/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_descriptor_buffer.cpp.o
+  [1680/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_buffer_cache_base.cpp.o
+  [1681/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_descriptor_pool.cpp.o
+  [1682/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_pipeline_library.cpp.o
+  [1683/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_multi_range_buffer.cpp.o
+  [1684/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_master_semaphore.cpp.o
+  [1685/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_flash_watch.cpp.o
+  [1686/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_compute_pipeline.cpp.o
+  [1687/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_frame_dump.cpp.o
+  [1688/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_fence_manager.cpp.o
+  [1689/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_render_pass_cache.cpp.o
+  [1690/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_present_manager.cpp.o
+  [1691/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_precompiled_kept.cpp.o
+  [1692/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_host_pacer.cpp.o
+  [1693/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_staging_buffer_pool.cpp.o
+  [1694/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_resource_pool.cpp.o
+  [1695/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_pipeline_translate_queue.cpp.o
+  [1696/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_graphics_pipeline.cpp.o
+  [1697/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_shader_util.cpp.o
+  [1698/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_state_tracker.cpp.o
+  [1699/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_query_cache.cpp.o
+  [1700/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_swapchain.cpp.o
+  [1701/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_update_descriptor.cpp.o
+  [1702/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_scheduler.cpp.o
+  [1703/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/vulkan_common/vulkan_debug_callback.cpp.o
+  [1704/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_pipeline_cache.cpp.o
+  [1705/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/vulkan_common/vulkan_memory_allocator.cpp.o
+  [1706/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/vulkan_common/vulkan_instance.cpp.o
+  [1707/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/vulkan_common/vulkan_library.cpp.o
+  [1708/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/vulkan_common/nsight_aftermath_tracker.cpp.o
+  [1709/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/vulkan_common/vulkan_device.cpp.o
+  [1710/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_rasterizer.cpp.o
+  [1711/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/vulkan_common/vulkan_surface.cpp.o
+  [1712/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/shader_notify.cpp.o
+  [1713/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_texture_cache_base.cpp.o
+  [1714/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_texture_cache.cpp.o
+  [1715/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/vulkan_common/vulkan_wrapper.cpp.o
+  [1716/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/texture_cache/accelerated_swizzle.cpp.o
+  [1717/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/shader_warm/shader_archives.cpp.o
+  [1718/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/vk_turbo_mode.cpp.o
+  [1719/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/shader_warm/warm_defaults.cpp.o
+  [1720/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/shader_cache.cpp.o
+  [1721/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/texture_cache/format_lookup_table.cpp.o
+  [1722/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/surface.cpp.o
+  [1723/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/textures/astc.cpp.o
+  [1724/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/shader_warm/shader_warm_builder.cpp.o
+  [1725/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/texture_cache/decode_bc.cpp.o
+  [1726/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/texture_cache/formatter.cpp.o
+  [1727/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/texture_cache/image_view_base.cpp.o
+  [1728/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/texture_cache/image_base.cpp.o
+  [1729/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/texture_cache/image_info.cpp.o
+  [1730/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/shader_environment.cpp.o
+  [1731/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/textures/texture.cpp.o
+  [1732/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/shader_warm/warm_records.cpp.o
+  [1733/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/textures/bcn.cpp.o
+  [1734/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/textures/decoders.cpp.o
+  [1735/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/textures/unswizzle_worker.cpp.o
+  [1736/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/textures/workers.cpp.o
+  [1737/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/texture_cache/util.cpp.o
+  [1738/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/texture_cache/image_view_info.cpp.o
+  [1739/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/frame_gen/lossless_dll.cpp.o
+  [1740/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/frame_gen/lsfg_translate.cpp.o
+  [1741/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/transform_feedback.cpp.o
+  [1742/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/texture_cache/texture_cache.cpp.o
+  [1743/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/present/frame_gen.cpp.o
+  [1744/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/present/frame_gen_pacer.cpp.o
+  [1745/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/present/lsfg_alpha.cpp.o
+  [1746/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/present/fsr3_frame_gen.cpp.o
+  [1747/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/present/lsfg_chain.cpp.o
+  [1748/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/present/lsfg_beta.cpp.o
+  [1749/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/present/lsfg_common.cpp.o
+  [1750/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/present/lsfg_delta.cpp.o
+  [1751/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/present/lsfg_gamma.cpp.o
+  [1752/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/present/lsfg_generate.cpp.o
+  [1753/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/present/lsfg_mipmaps.cpp.o
+  [1754/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/post_processing/fx_compile.cpp.o
+  [1755/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/present/lsfg_shaders.cpp.o
+  [1756/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/post_processing/fx_chain.cpp.o
+  [1757/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/video_core.cpp.o
+  [1758/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/post_processing/fx_effect.cpp.o
+  [1759/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/renderer_vulkan/present/post_process.cpp.o
+  [1760/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/post_processing/fx_preset.cpp.o
+  [1761/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/__/common/fs/fs_android.cpp.o
+  [1762/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/__/common/android/android_common.cpp.o
+  [1763/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/__/common/android/id_cache.cpp.o
+  [1764/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/__/common/android/multiplayer/multiplayer.cpp.o
+  [1765/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/__/common/android/applets/software_keyboard.cpp.o
+  [1766/1824] Building CXX object src/video_core/CMakeFiles/video_core.dir/__/common/android/applets/web_browser.cpp.o
+  [1767/1824] Linking CXX static library src/video_core/libvideo_core.a
+  [1768/1824] Linking CXX static library src/audio_core/libaudio_core.a
+  [1769/1824] Building CXX object src/input_common/CMakeFiles/input_common.dir/drivers/virtual_gamepad.cpp.o
+  [1770/1824] Building CXX object src/input_common/CMakeFiles/input_common.dir/drivers/keyboard.cpp.o
+  [1771/1824] Building CXX object src/input_common/CMakeFiles/input_common.dir/drivers/camera.cpp.o
+  [1772/1824] Building CXX object src/input_common/CMakeFiles/input_common.dir/drivers/mouse.cpp.o
+  [1773/1824] Building CXX object src/input_common/CMakeFiles/input_common.dir/input_engine.cpp.o
+  [1774/1824] Building CXX object src/input_common/CMakeFiles/input_common.dir/drivers/touch_screen.cpp.o
+  [1775/1824] Building CXX object src/input_common/CMakeFiles/input_common.dir/drivers/tas_input.cpp.o
+  [1776/1824] Building CXX object src/input_common/CMakeFiles/input_common.dir/helpers/touch_from_buttons.cpp.o
+  [1777/1824] Building CXX object src/input_common/CMakeFiles/input_common.dir/drivers/virtual_amiibo.cpp.o
+  [1778/1824] Building CXX object src/input_common/CMakeFiles/input_common.dir/helpers/udp_protocol.cpp.o
+  [1779/1824] Building CXX object src/input_common/CMakeFiles/input_common.dir/helpers/stick_from_buttons.cpp.o
+  [1780/1824] Building CXX object src/input_common/CMakeFiles/input_common.dir/input_poller.cpp.o
+  [1781/1824] Building CXX object src/input_common/CMakeFiles/input_common.dir/__/common/android/android_common.cpp.o
+  [1782/1824] Building CXX object src/input_common/CMakeFiles/input_common.dir/__/common/fs/fs_android.cpp.o
+  [1783/1824] Building CXX object src/input_common/CMakeFiles/input_common.dir/input_mapping.cpp.o
+  [1784/1824] Building CXX object src/input_common/CMakeFiles/input_common.dir/main.cpp.o
+  [1785/1824] Building CXX object src/input_common/CMakeFiles/input_common.dir/drivers/udp_client.cpp.o
+  [1786/1824] Building CXX object src/input_common/CMakeFiles/input_common.dir/drivers/android.cpp.o
+  [1787/1824] Building CXX object src/input_common/CMakeFiles/input_common.dir/__/common/android/multiplayer/multiplayer.cpp.o
+  [1788/1824] Building CXX object src/input_common/CMakeFiles/input_common.dir/__/common/android/id_cache.cpp.o
+  [1789/1824] Building CXX object src/input_common/CMakeFiles/input_common.dir/__/common/android/applets/web_browser.cpp.o
+  [1790/1824] Building CXX object src/input_common/CMakeFiles/input_common.dir/__/common/android/applets/software_keyboard.cpp.o
+  [1791/1824] Building CXX object src/frontend_common/CMakeFiles/frontend_common.dir/data_manager.cpp.o
+  [1792/1824] Building CXX object src/frontend_common/CMakeFiles/frontend_common.dir/__/common/android/multiplayer/multiplayer.cpp.o
+  [1793/1824] Building CXX object src/frontend_common/CMakeFiles/frontend_common.dir/__/common/fs/fs_android.cpp.o
+  [1794/1824] Building CXX object src/frontend_common/CMakeFiles/frontend_common.dir/settings_generator.cpp.o
+  [1795/1824] Building CXX object src/frontend_common/CMakeFiles/frontend_common.dir/firmware_manager.cpp.o
+  [1796/1824] Building CXX object src/frontend_common/CMakeFiles/frontend_common.dir/play_time_manager.cpp.o
+  [1797/1824] Building CXX object src/frontend_common/CMakeFiles/frontend_common.dir/update_checker.cpp.o
+  [1798/1824] Building CXX object src/frontend_common/CMakeFiles/frontend_common.dir/config.cpp.o
+  [1799/1824] Building CXX object src/frontend_common/CMakeFiles/frontend_common.dir/mod_manager.cpp.o
+  [1800/1824] Building CXX object src/frontend_common/CMakeFiles/frontend_common.dir/update_installer.cpp.o
+  [1801/1824] Building CXX object src/frontend_common/CMakeFiles/frontend_common.dir/__/common/android/android_common.cpp.o
+  [1802/1824] Building CXX object src/frontend_common/CMakeFiles/frontend_common.dir/__/common/android/applets/web_browser.cpp.o
+  [1803/1824] Building CXX object src/frontend_common/CMakeFiles/frontend_common.dir/__/common/android/applets/software_keyboard.cpp.o
+  [1804/1824] Building CXX object src/frontend_common/CMakeFiles/frontend_common.dir/__/common/android/id_cache.cpp.o
+  [1805/1824] Building CXX object src/android/app/src/main/jni/CMakeFiles/yuzu-android.dir/emu_window/emu_window.cpp.o
+  [1806/1824] Building CXX object src/android/app/src/main/jni/CMakeFiles/yuzu-android.dir/android_settings.cpp.o
+  [1807/1824] Building CXX object src/android/app/src/main/jni/CMakeFiles/yuzu-android.dir/native_config.cpp.o
+  [1808/1824] Building CXX object src/android/app/src/main/jni/CMakeFiles/yuzu-android.dir/android_config.cpp.o
+  [1809/1824] Building CXX object src/android/app/src/main/jni/CMakeFiles/yuzu-android.dir/native_freedreno.cpp.o
+  [1810/1824] Building CXX object src/android/app/src/main/jni/CMakeFiles/yuzu-android.dir/native_log.cpp.o
+  [1811/1824] Building CXX object src/android/app/src/main/jni/CMakeFiles/yuzu-android.dir/native_post_processing.cpp.o
+  [1812/1824] Building CXX object src/android/app/src/main/jni/CMakeFiles/yuzu-android.dir/__/__/__/__/__/common/fs/fs_android.cpp.o
+  [1813/1824] Building CXX object src/android/app/src/main/jni/CMakeFiles/yuzu-android.dir/game_metadata.cpp.o
+  [1814/1824] Building CXX object src/android/app/src/main/jni/CMakeFiles/yuzu-android.dir/__/__/__/__/__/common/android/multiplayer/multiplayer.cpp.o
+  [1815/1824] Building CXX object src/android/app/src/main/jni/CMakeFiles/yuzu-android.dir/__/__/__/__/__/common/android/android_common.cpp.o
+  [1816/1824] Building CXX object src/android/app/src/main/jni/CMakeFiles/yuzu-android.dir/__/__/__/__/__/common/android/applets/software_keyboard.cpp.o
+  [1817/1824] Building CXX object src/android/app/src/main/jni/CMakeFiles/yuzu-android.dir/__/__/__/__/__/common/android/id_cache.cpp.o
+  [1818/1824] Building CXX object src/android/app/src/main/jni/CMakeFiles/yuzu-android.dir/native_input.cpp.o
+  [1819/1824] Building CXX object src/android/app/src/main/jni/CMakeFiles/yuzu-android.dir/__/__/__/__/__/common/android/applets/web_browser.cpp.o
+  [1820/1824] Building CXX object src/android/app/src/main/jni/CMakeFiles/yuzu-android.dir/native.cpp.o
+  ninja: build stopped: cannot make progress due to previous errors.
+  
+  C++ build system [build] failed while executing:
+      /usr/local/lib/android/sdk/cmake/3.31.5/bin/ninja \
+        -C \
+        /home/runner/work/Fritchii/Fritchii/src/android/app/.cxx/RelWithDebInfo/122g1u45/arm64-v8a \
+        file_redirect_hook \
+        gsl_alloc_hook \
+        hook_impl \
+        infcover \
+        lz4cli \
+        main_hook \
+        static_minigzip \
+        yuzu-android \
+        zlib_static_example \
+        zlib_static_example64 \
+        zstd \
+        zstd-frugal
+    from /home/runner/work/Fritchii/Fritchii/src/android/app
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 24m 11s
+2 actionable tasks: 2 executed
+-- Done! APK and AAB artifacts are in /home/runner/work/Fritchii/Fritchii/artifacts
+ls: cannot access '/home/runner/work/Fritchii/Fritchii/artifacts/': No such file or directory
