@@ -53,6 +53,12 @@ jobs:
           "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --install \
             "ndk;${NDK_VERSION}" "cmake;${CMAKE_VERSION}" >/dev/null
           ls "$ANDROID_HOME/ndk" "$ANDROID_HOME/cmake"
+          # Keep compiling after the first error, so one run reports every broken file.
+          ninja_bin="$ANDROID_HOME/cmake/${CMAKE_VERSION}/bin/ninja"
+          mv "$ninja_bin" "$ninja_bin.real"
+          printf '#!/bin/sh\nexec "%s.real" -k 0 "$@"\n' "$ninja_bin" > "$ninja_bin"
+          chmod +x "$ninja_bin"
+          "$ninja_bin" --version
 
       - name: Restore dependency downloads
         uses: actions/cache@v4
