@@ -1,0 +1,94 @@
+name: android-apk
+
+on:
+  push:
+    branches:
+      - android-port
+  workflow_dispatch:
+
+concurrency:
+  group: android-apk-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  apk:
+    name: Fritchii Android (arm64)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 330
+    env:
+      NDK_VERSION: 28.2.13676358
+      CMAKE_VERSION: 3.31.5
+      CCACHE_DIR: ${{ github.workspace }}/.ccache
+      CCACHE_MAXSIZE: 4G
+      CCACHE_COMPILERCHECK: content
+      CCACHE_SLOPPINESS: time_macros,include_file_mtime,include_file_ctime
+    steps:
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/node_modules /opt/ghc /usr/local/.ghcup \
+            /usr/local/share/powershell /usr/share/swift /opt/hostedtoolcache/CodeQL
+          sudo docker image prune --all --force >/dev/null 2>&1 || true
+          df -h /
+
+      - name: Check out source
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 200
+          fetch-tags: true
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Install NDK, CMake and ccache
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ccache glslang-tools ninja-build
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses >/dev/null
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --install \
+            "ndk;${NDK_VERSION}" "cmake;${CMAKE_VERSION}" >/dev/null
+          ls "$ANDROID_HOME/ndk" "$ANDROID_HOME/cmake"
+
+      - name: Restore dependency downloads
+        uses: actions/cache@v4
+        with:
+          path: .cache/cpm
+          key: cpm-android-${{ hashFiles('cpmfile.json', '**/cpmfile.json') }}
+          restore-keys: cpm-android-
+
+      - name: Restore compiler cache
+        uses: actions/cache@v4
+        with:
+          path: .ccache
+          key: ccache-android-${{ github.sha }}
+          restore-keys: ccache-android-
+
+      - name: Build APK
+        env:
+          CCACHE: "true"
+          GIT_TAG_NAME: fritchii-android-${{ github.run_number }}
+        run: |
+          ccache --zero-stats
+          sh .ci/android/build.sh -t standard -b Release \
+            -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache
+          ccache --show-stats
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Fritchii-Android-${{ github.run_number }}
+          path: artifacts/*.apk
+          if-no-files-found: error
+
+      - name: Upload build logs on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-logs-${{ github.run_number }}
+          path: |
+            src/android/app/.cxx/**/CMakeFiles/CMakeOutput.log
+            src/android/app/.cxx/**/CMakeFiles/CMakeError.log
+            src/android/app/.cxx/**/CMakeFiles/CMakeConfigureLog.yaml
+          if-no-files-found: ignore
