@@ -1,0 +1,407 @@
+run 6 commit 9e1cade758c229d791075fd79ea7e3befe559629
+=== errors ===
+=== kotlin ===
+55:e: file:///home/runner/work/Fritchii/Fritchii/src/android/app/src/main/java/org/yuzu/yuzu_emu/NativeLibrary.kt:19:12 Unresolved reference: libsdl
+56:e: file:///home/runner/work/Fritchii/Fritchii/src/android/app/src/main/java/org/yuzu/yuzu_emu/NativeLibrary.kt:56:13 Unresolved reference: SDL
+64:* What went wrong:
+=== last 400 lines ===
+Caching disabled for AarTransform: /home/runner/.gradle/caches/8.13/transforms/66e5c6e83f3c8a1555f7f61850151e47/transformed/core-runtime-2.2.0 because:
+  Caching not enabled.
+Build cache key for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/androidx.arch.core/core-common/2.2.0/5e1b8b81dfd5f52c56a8d53b18ca759c19a301f3/core-common-2.2.0.jar is 7e92697f3ad2b43f6916d25a7c7da553
+Caching disabled for FilterShrinkerRulesTransform: /home/runner/.gradle/caches/8.13/transforms/97af21257791f7dd8d919beebdd916cd/transformed/runtime-release/proguard.txt because:
+  Caching not enabled.
+Caching disabled for AarTransform: /home/runner/.gradle/caches/8.13/transforms/789f36b28dbf4eab85043b8663431182/transformed/print-1.0.0 because:
+  Caching not enabled.
+Caching disabled for AarTransform: /home/runner/.gradle/caches/8.13/transforms/95c1ae39fde314c5d24192190c430446/transformed/localbroadcastmanager-1.0.0 because:
+  Caching not enabled.
+Stored cache entry for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/androidx.arch.core/core-common/2.2.0/5e1b8b81dfd5f52c56a8d53b18ca759c19a301f3/core-common-2.2.0.jar with cache key 7e92697f3ad2b43f6916d25a7c7da553
+Build cache key for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/androidx.collection/collection-ktx/1.4.4/2ad14aed781c4a73ed4dbb421966d408a0a06686/collection-ktx-1.4.4.jar is d676d1a0b3500bb2ea2a3cf80f7909f3
+Build cache key for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/androidx.collection/collection-jvm/1.4.4/da13a7e557c430276b8cb490420effebc1398c0d/collection-jvm-1.4.4.jar is ba241b04a27bea0429a275bf595d5af5
+Build cache key for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/androidx.annotation/annotation-jvm/1.8.1/b8a16fe526014b7941c1debaccaf9c5153692dbb/annotation-jvm-1.8.1.jar is d27e9cfe9c1ac6da8fdeac0c0926d77e
+Caching disabled for AarTransform: /home/runner/.gradle/caches/8.13/transforms/f2156cb381ff5bf1e2bd22374a0aee01/transformed/annotation-experimental-1.4.1 because:
+  Caching not enabled.
+Stored cache entry for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/androidx.collection/collection-ktx/1.4.4/2ad14aed781c4a73ed4dbb421966d408a0a06686/collection-ktx-1.4.4.jar with cache key d676d1a0b3500bb2ea2a3cf80f7909f3
+Stored cache entry for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/androidx.collection/collection-jvm/1.4.4/da13a7e557c430276b8cb490420effebc1398c0d/collection-jvm-1.4.4.jar with cache key ba241b04a27bea0429a275bf595d5af5
+Build cache key for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.17.2/e6deb029e5901e027c129341fac39e515066b68c/jackson-databind-2.17.2.jar is 56c37b1d3662737fb9aa0642d824f8c6
+Build cache key for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.17.2/147b7b9412ffff24339f8aba080b292448e08698/jackson-annotations-2.17.2.jar is 80279d71dd103808ec1cb068d2c594c4
+Stored cache entry for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/androidx.annotation/annotation-jvm/1.8.1/b8a16fe526014b7941c1debaccaf9c5153692dbb/annotation-jvm-1.8.1.jar with cache key d27e9cfe9c1ac6da8fdeac0c0926d77e
+Stored cache entry for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-databind/2.17.2/e6deb029e5901e027c129341fac39e515066b68c/jackson-databind-2.17.2.jar with cache key 56c37b1d3662737fb9aa0642d824f8c6
+Caching disabled for FilterShrinkerRulesTransform: /home/runner/.gradle/caches/8.13/transforms/afc517584c66f863e791c9ba962c22f7/transformed/rules because:
+  Caching not enabled.
+Stored cache entry for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-annotations/2.17.2/147b7b9412ffff24339f8aba080b292448e08698/jackson-annotations-2.17.2.jar with cache key 80279d71dd103808ec1cb068d2c594c4
+Build cache key for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-kotlin/2.17.2/67d4e4ec0538f59a28c92f7fa0b63bd2c8b0ef21/jackson-module-kotlin-2.17.2.jar is 625d968e2820612b3572edcb327687e3
+Build cache key for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.17.2/969a35cb35c86512acbadcdbbbfb044c877db814/jackson-core-2.17.2.jar is 2ca998ce16d458112f5f9f3c7b02829d
+Build cache key for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/4.12.0/2f4525d4a200e97e1b87449c2cd9bd2e25b7e8cd/okhttp-4.12.0.jar is 5464778c9e95845e267b1a0f98071548
+Stored cache entry for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.17.2/969a35cb35c86512acbadcdbbbfb044c877db814/jackson-core-2.17.2.jar with cache key 2ca998ce16d458112f5f9f3c7b02829d
+Build cache key for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio-jvm/3.6.0/5600569133b7bdefe1daf9ec7f4abeb6d13e1786/okio-jvm-3.6.0.jar is 3961270d18a5cf38d5cc9e8ed8d88a55
+Build cache key for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.8.22/b52be44bc57cb6fd2169a29aefa4507c4e49c858/kotlin-reflect-1.8.22.jar is 15f3393a0f0747dabb23fbde1c8b1267
+Stored cache entry for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.module/jackson-module-kotlin/2.17.2/67d4e4ec0538f59a28c92f7fa0b63bd2c8b0ef21/jackson-module-kotlin-2.17.2.jar with cache key 625d968e2820612b3572edcb327687e3
+Build cache key for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm/1.7.3/2b09627576f0989a436a00a4a54b55fa5026fb86/kotlinx-coroutines-core-jvm-1.7.3.jar is 80cf94a483bf2b70bb9d5215b44e6cac
+Stored cache entry for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio-jvm/3.6.0/5600569133b7bdefe1daf9ec7f4abeb6d13e1786/okio-jvm-3.6.0.jar with cache key 3961270d18a5cf38d5cc9e8ed8d88a55
+Build cache key for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-android/1.7.3/38d9cad3a0b03a10453b56577984bdeb48edeed5/kotlinx-coroutines-android-1.7.3.jar is 8cd5fcc414883c6fc36bf509b951fd98
+Stored cache entry for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/4.12.0/2f4525d4a200e97e1b87449c2cd9bd2e25b7e8cd/okhttp-4.12.0.jar with cache key 5464778c9e95845e267b1a0f98071548
+Caching disabled for FilterShrinkerRulesTransform: /home/runner/.gradle/caches/8.13/transforms/70de51e65245a97681277055e4c1e747/transformed/rules because:
+  Caching not enabled.
+Stored cache entry for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-android/1.7.3/38d9cad3a0b03a10453b56577984bdeb48edeed5/kotlinx-coroutines-android-1.7.3.jar with cache key 8cd5fcc414883c6fc36bf509b951fd98
+Caching disabled for FilterShrinkerRulesTransform: /home/runner/.gradle/caches/8.13/transforms/9649550855f5fd23312ea8c10065469f/transformed/rules because:
+  Caching not enabled.
+Build cache key for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk8/1.9.10/c7510d64a83411a649c76f2778304ddf71d7437b/kotlin-stdlib-jdk8-1.9.10.jar is 4e87df1e34bdc179f928e50d6dcd8530
+Stored cache entry for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk8/1.9.10/c7510d64a83411a649c76f2778304ddf71d7437b/kotlin-stdlib-jdk8-1.9.10.jar with cache key 4e87df1e34bdc179f928e50d6dcd8530
+Build cache key for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/1.9.10/bc5bfc2690338defd5195b05c57562f2194eeb10/kotlin-stdlib-jdk7-1.9.10.jar is ecddd8fa130e9f1ef91aab55f90b05df
+Build cache key for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.9.24/9928532f12c66ad816a625b3f9984f8368ca6d2b/kotlin-stdlib-1.9.24.jar is 5c680478aee0480997aea9dd18df805c
+Stored cache entry for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-reflect/1.8.22/b52be44bc57cb6fd2169a29aefa4507c4e49c858/kotlin-reflect-1.8.22.jar with cache key 15f3393a0f0747dabb23fbde1c8b1267
+Stored cache entry for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm/1.7.3/2b09627576f0989a436a00a4a54b55fa5026fb86/kotlinx-coroutines-core-jvm-1.7.3.jar with cache key 80cf94a483bf2b70bb9d5215b44e6cac
+Stored cache entry for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.9.24/9928532f12c66ad816a625b3f9984f8368ca6d2b/kotlin-stdlib-1.9.24.jar with cache key 5c680478aee0480997aea9dd18df805c
+Stored cache entry for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/1.9.10/bc5bfc2690338defd5195b05c57562f2194eeb10/kotlin-stdlib-jdk7-1.9.10.jar with cache key ecddd8fa130e9f1ef91aab55f90b05df
+Caching disabled for FilterShrinkerRulesTransform: /home/runner/.gradle/caches/8.13/transforms/6b23169ac06b9adce7a0ace0a519a4fc/transformed/rules because:
+  Caching not enabled.
+Caching disabled for FilterShrinkerRulesTransform: /home/runner/.gradle/caches/8.13/transforms/ac6d30bb1ca1488371a20c696a70d8e1/transformed/rules because:
+  Caching not enabled.
+Build cache key for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.commonmark/commonmark/0.22.0/8aad0beb29c6a0978950f1e14e15c1b7df1ae937/commonmark-0.22.0.jar is 87f1fe626914cea47ece9d48c891d062
+Build cache key for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/info.debatty/java-string-similarity/2.0.0/52fe33d36fcf7999dc72b3e1e573bbcab9926ea2/java-string-similarity-2.0.0.jar is 997ece7893237ae29fa3011449dea627
+Build cache key for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/23.0.0/8cc20c07506ec18e0834947b84a864bfc094484e/annotations-23.0.0.jar is 76e3cd93932cb4e7bb26f41495055c89
+Build cache key for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.15.0/38c8485a652f808c8c149150da4e5c2b0bd17f9a/error_prone_annotations-2.15.0.jar is d01daa9bfc9e21ed257ab023ba9d90d0
+Stored cache entry for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.commonmark/commonmark/0.22.0/8aad0beb29c6a0978950f1e14e15c1b7df1ae937/commonmark-0.22.0.jar with cache key 87f1fe626914cea47ece9d48c891d062
+Stored cache entry for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/info.debatty/java-string-similarity/2.0.0/52fe33d36fcf7999dc72b3e1e573bbcab9926ea2/java-string-similarity-2.0.0.jar with cache key 997ece7893237ae29fa3011449dea627
+Stored cache entry for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.15.0/38c8485a652f808c8c149150da4e5c2b0bd17f9a/error_prone_annotations-2.15.0.jar with cache key d01daa9bfc9e21ed257ab023ba9d90d0
+Stored cache entry for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/23.0.0/8cc20c07506ec18e0834947b84a864bfc094484e/annotations-23.0.0.jar with cache key 76e3cd93932cb4e7bb26f41495055c89
+Build cache key for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/net.jcip/jcip-annotations/1.0/afba4942caaeaf46aab0b976afd57cc7c181467e/jcip-annotations-1.0.jar is a44e6956e59e30277480a0c6f3765ba1
+Build cache key for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/com.google.guava/listenablefuture/1.0/c949a840a6acbc5268d088e47b04177bf90b3cad/listenablefuture-1.0.jar is 425fb53a9f3643e0d22f62da354ac096
+Stored cache entry for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/net.jcip/jcip-annotations/1.0/afba4942caaeaf46aab0b976afd57cc7c181467e/jcip-annotations-1.0.jar with cache key a44e6956e59e30277480a0c6f3765ba1
+Stored cache entry for ExtractProGuardRulesTransform: /home/runner/.gradle/caches/modules-2/files-2.1/com.google.guava/listenablefuture/1.0/c949a840a6acbc5268d088e47b04177bf90b3cad/listenablefuture-1.0.jar with cache key 425fb53a9f3643e0d22f62da354ac096
+Build cache key for task ':app:minifyMainlineReleaseWithR8' is 543308a115c05580e6462fd2cb360ee9
+Task ':app:minifyMainlineReleaseWithR8' is not up-to-date because:
+  No history is available.
+R8 is a new Android code shrinker. If you experience any issues, please file a bug at
+https://issuetracker.google.com, using 'Shrinker (R8)' as component name.
+Current version is: 8.9.32.
+
+file or directory '/home/runner/work/Fritchii/Fritchii/src/android/app/build/intermediates/generated_proguard_file/mainlineRelease/mergeMainlineReleaseGeneratedProguardFiles/proguard.txt', not found
+INFO: /home/runner/work/Fritchii/Fritchii/src/android/app/build/intermediates/aapt_proguard_file/mainlineRelease/processMainlineReleaseResources/aapt_rules.txt:12:1-97: R8: Proguard configuration rule does not match anything: `-keep class android.widget.Space {
+  <init>(android.content.Context,android.util.AttributeSet);
+}`
+INFO: /home/runner/work/Fritchii/Fritchii/src/android/app/build/intermediates/default_proguard_files/global/proguard-android-optimize.txt-8.9.1:21:1-22:1: R8: Proguard configuration rule does not match anything: `-keep public class com.google.vending.licensing.ILicensingService {
+  <init>();
+}`
+INFO: /home/runner/work/Fritchii/Fritchii/src/android/app/build/intermediates/default_proguard_files/global/proguard-android-optimize.txt-8.9.1:22:1-23:1: R8: Proguard configuration rule does not match anything: `-keep public class com.android.vending.licensing.ILicensingService {
+  <init>();
+}`
+INFO: /home/runner/work/Fritchii/Fritchii/src/android/app/build/intermediates/default_proguard_files/global/proguard-android-optimize.txt-8.9.1:23:1-24:1: R8: Proguard configuration rule does not match anything: `-keep public class com.google.android.vending.licensing.ILicensingService {
+  <init>();
+}`
+INFO: /home/runner/work/Fritchii/Fritchii/src/android/app/build/intermediates/default_proguard_files/global/proguard-android-optimize.txt-8.9.1:55:1-57:2: R8: Proguard configuration rule does not match anything: `-keepclassmembers class * {
+  @android.webkit.JavascriptInterface <methods>;
+}`
+INFO: /home/runner/work/Fritchii/Fritchii/src/android/app/build/intermediates/default_proguard_files/global/proguard-android-optimize.txt-8.9.1:68:1-70:1: R8: Proguard configuration rule does not match anything: `-keep class android.support.annotation.Keep {
+  <init>();
+}`
+INFO: /home/runner/work/Fritchii/Fritchii/src/android/app/build/intermediates/default_proguard_files/global/proguard-android-optimize.txt-8.9.1:70:1-52: R8: Proguard configuration rule does not match anything: `-keep @android.support.annotation.Keep class * {
+  *;
+}`
+INFO: /home/runner/work/Fritchii/Fritchii/src/android/app/build/intermediates/default_proguard_files/global/proguard-android-optimize.txt-8.9.1:72:1-74:2: R8: Proguard configuration rule does not match anything: `-keepclasseswithmembers class * {
+  @android.support.annotation.Keep <methods>;
+}`
+INFO: /home/runner/work/Fritchii/Fritchii/src/android/app/build/intermediates/default_proguard_files/global/proguard-android-optimize.txt-8.9.1:76:1-78:2: R8: Proguard configuration rule does not match anything: `-keepclasseswithmembers class * {
+  @android.support.annotation.Keep <fields>;
+}`
+INFO: /home/runner/work/Fritchii/Fritchii/src/android/app/build/intermediates/default_proguard_files/global/proguard-android-optimize.txt-8.9.1:80:1-82:2: R8: Proguard configuration rule does not match anything: `-keepclasseswithmembers class * {
+  @android.support.annotation.Keep <init>(...);
+}`
+INFO: /home/runner/work/Fritchii/Fritchii/src/android/app/proguard-rules.pro:8:1-9:1: R8: Proguard configuration rule does not match anything: `-keep class org.ini4j.spi.IniParser {
+  <init>();
+}`
+INFO: /home/runner/work/Fritchii/Fritchii/src/android/app/proguard-rules.pro:9:1-10:1: R8: Proguard configuration rule does not match anything: `-keep class org.ini4j.spi.IniBuilder {
+  <init>();
+}`
+INFO: /home/runner/work/Fritchii/Fritchii/src/android/app/proguard-rules.pro:10:1-12:1: R8: Proguard configuration rule does not match anything: `-keep class org.ini4j.spi.IniFormatter {
+  <init>();
+}`
+INFO: /home/runner/.gradle/caches/8.13/transforms/89e2ff0b92e11b4840a2630082c2848f/transformed/fragment-1.8.6/proguard.txt:24:1-29:2: R8: Proguard configuration rule does not match anything: `-if class androidx.fragment.app.FragmentTransition {
+  private static androidx.fragment.app.FragmentTransitionImpl resolveSupportImpl();
+}
+-keep class androidx.transition.FragmentTransitionSupport {
+  public <init>();
+}`
+INFO: /home/runner/.gradle/caches/8.13/transforms/fc3e2500d2c4d2b63b899374134736bf/transformed/lifecycle-runtime-release/proguard.txt:10:1-12:2: R8: Proguard configuration rule does not match anything: `-keep class * implements androidx.lifecycle.GeneratedAdapter {
+  <init>(...);
+}`
+INFO: /home/runner/.gradle/caches/8.13/transforms/fc3e2500d2c4d2b63b899374134736bf/transformed/lifecycle-runtime-release/proguard.txt:14:1-16:2: R8: Proguard configuration rule does not match anything: `-keepclassmembers class ** {
+  @androidx.lifecycle.OnLifecycleEvent *;
+}`
+INFO: /home/runner/.gradle/caches/8.13/transforms/f507d38708d030f5a155aae3c813074b/transformed/lifecycle-viewmodel-release/proguard.txt:5:1-7:2: R8: Proguard configuration rule does not match anything: `-keepclassmembers,allowrepackaging,allowobfuscation class * extends androidx.lifecycle.AndroidViewModel {
+  <init>(android.app.Application);
+}`
+INFO: /home/runner/.gradle/caches/8.13/transforms/7236498e2ce5a8e58cde7c8bcf9b7764/transformed/lifecycle-viewmodel-savedstate-2.8.7/proguard.txt:5:1-7:2: R8: Proguard configuration rule does not match anything: `-keepclassmembers,allowrepackaging,allowobfuscation class * extends androidx.lifecycle.AndroidViewModel {
+  <init>(android.app.Application,androidx.lifecycle.SavedStateHandle);
+}`
+INFO: /home/runner/.gradle/caches/8.13/transforms/afc517584c66f863e791c9ba962c22f7/transformed/rules/lib/META-INF/proguard/androidx-annotations.pro:8:1-10:2: R8: Proguard configuration rule does not match anything: `-keepclasseswithmembers class * {
+  @androidx.annotation.Keep <fields>;
+}`
+INFO: /home/runner/.gradle/caches/8.13/transforms/afc517584c66f863e791c9ba962c22f7/transformed/rules/lib/META-INF/proguard/androidx-annotations.pro:12:1-14:2: R8: Proguard configuration rule does not match anything: `-keepclasseswithmembers class * {
+  @androidx.annotation.Keep <init>(...);
+}`
+
+> Task :app:lintVitalAnalyzeMainlineRelease
+Downloading https://dl.google.com/dl/android/maven2/com/android/tools/lint/lint-gradle/31.9.1/lint-gradle-31.9.1.pom to /home/runner/.gradle/.tmp/gradle_download6794326308909494088bin
+Downloading https://dl.google.com/dl/android/maven2/com/android/tools/external/com-intellij/intellij-core/31.9.1/intellij-core-31.9.1.pom to /home/runner/.gradle/.tmp/gradle_download10385087909275929165bin
+Downloading https://dl.google.com/dl/android/maven2/com/android/tools/external/org-jetbrains/uast/31.9.1/uast-31.9.1.pom to /home/runner/.gradle/.tmp/gradle_download9783245744825595136bin
+Downloading https://dl.google.com/dl/android/maven2/com/android/tools/external/com-intellij/kotlin-compiler/31.9.1/kotlin-compiler-31.9.1.pom to /home/runner/.gradle/.tmp/gradle_download1186655115734842330bin
+Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/org/codehaus/groovy/groovy/3.0.22/groovy-3.0.22.pom]
+Downloading https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy/3.0.22/groovy-3.0.22.pom to /home/runner/.gradle/.tmp/gradle_download7583696857605900908bin
+Downloading https://dl.google.com/dl/android/maven2/com/android/tools/lint/lint/31.9.1/lint-31.9.1.pom to /home/runner/.gradle/.tmp/gradle_download10477661230348068505bin
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/2.1.0/kotlin-stdlib-jdk8-2.1.0.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk8/2.1.0/4e1ccbf4ec2e99a191384342f2f69374bff08085/kotlin-stdlib-jdk8-2.1.0.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/net/java/dev/jna/jna-platform/5.6.0/jna-platform-5.6.0.pom, /home/runner/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna-platform/5.6.0/f86d5b088d311a7dee895e06cb2a08ccada7cbde/jna-platform-5.6.0.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/google/guava/guava/32.0.1-jre/guava-32.0.1-jre.pom, /home/runner/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/32.0.1-jre/4b29ff9dfc268252e73839b0f7324ef705e07108/guava-32.0.1-jre.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/google/guava/guava-parent/32.0.1-jre/guava-parent-32.0.1-jre.pom, /home/runner/.gradle/caches/modules-2/files-2.1/com.google.guava/guava-parent/32.0.1-jre/88c9e60e238868208ca8e375a475a23142e52ac6/guava-parent-32.0.1-jre.pom]
+Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/org/jetbrains/kotlin/kotlin-reflect/2.1.0/kotlin-reflect-2.1.0.pom]
+Downloading https://dl.google.com/dl/android/maven2/com/android/tools/lint/lint-checks/31.9.1/lint-checks-31.9.1.pom to /home/runner/.gradle/.tmp/gradle_download11081043979926714702bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-reflect/2.1.0/kotlin-reflect-2.1.0.pom to /home/runner/.gradle/.tmp/gradle_download18425170177993228850bin
+Downloading https://dl.google.com/dl/android/maven2/com/android/tools/lint/lint-api/31.9.1/lint-api-31.9.1.pom to /home/runner/.gradle/.tmp/gradle_download4484289443721417966bin
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.7/asm-9.7.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/9.7/e2568079bd69f0fdf35fe2d9e7cd9b16db8eff94/asm-9.7.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/ow2/ow2/1.5.1/ow2-1.5.1.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.ow2/ow2/1.5.1/bda66fa5f1b68fa7d2de3d569bdc8508b2af82d4/ow2-1.5.1.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.pom, /home/runner/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/8d93cdf4d84d7e1de736df607945c6df0730a10f/jsr305-3.0.2.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.pom, /home/runner/.gradle/caches/modules-2/files-2.1/com.google.guava/failureaccess/1.0.1/e8160e78fdaaf7088621dc1649d9dd2dfcf8d0e8/failureaccess-1.0.1.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.pom, /home/runner/.gradle/caches/modules-2/files-2.1/com.google.guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/1b77ba79f9b2b7dfd4e15ea7bb0d568d5eb9cb8d/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/sonatype/oss/oss-parent/7/oss-parent-7.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.sonatype.oss/oss-parent/7/46b8a785b60a2767095b8611613b58577e96d4c9/oss-parent-7.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8.pom, /home/runner/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/2.8/c8daacea97066c6826844e2175ec89857e598122/j2objc-annotations-2.8.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/3.33.0/checker-qual-3.33.0.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.33.0/6d43e2eacef053cffd73da56734e9a8a138b52be/checker-qual-3.33.0.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.18.0/error_prone_annotations-2.18.0.pom, /home/runner/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.18.0/6d7bbfd3d7567e4c18e981a675ecda707e8a2db1/error_prone_annotations-2.18.0.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/3.33.0/checker-qual-3.33.0.module, /home/runner/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.33.0/8bde6d6ac61111dd13bb39a2e3881444c58dfe90/checker-qual-3.33.0.module]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_parent/2.18.0/error_prone_parent-2.18.0.pom, /home/runner/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_parent/2.18.0/b1779a677965027cd2a3de91e61a80102086bb30/error_prone_parent-2.18.0.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/net/java/dev/jna/jna/5.6.0/jna-5.6.0.pom, /home/runner/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna/5.6.0/e542808a6326ec0302c0b09011cb4363e1ece380/jna-5.6.0.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk7/2.1.0/kotlin-stdlib-jdk7-2.1.0.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/2.1.0/47da336a736181dfcf3d178b9673848139fda4ff/kotlin-stdlib-jdk7-2.1.0.pom]
+Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/org/jetbrains/kotlin/kotlin-stdlib/2.1.0/kotlin-stdlib-2.1.0.pom]
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/2.1.0/kotlin-stdlib-2.1.0.pom to /home/runner/.gradle/.tmp/gradle_download17998471408465675778bin
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/2.1.0/kotlin-stdlib-2.1.0.module to /home/runner/.gradle/.tmp/gradle_download3675694873080486662bin
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/9.7/asm-commons-9.7.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/9.7/c3096037f951d9ccbc7b236a5d70376b101582f/asm-commons-9.7.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/commons-io/commons-io/2.16.1/commons-io-2.16.1.pom, /home/runner/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.16.1/553d6f69e338060a231755afe0ebf99d14b45da6/commons-io-2.16.1.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/net/sf/kxml/kxml2/2.3.0/kxml2-2.3.0.pom, /home/runner/.gradle/caches/modules-2/files-2.1/net.sf.kxml/kxml2/2.3.0/8efa75f9cdc57687076b2125b1a098e6f42e737d/kxml2-2.3.0.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/69/commons-parent-69.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-parent/69/6ebeacd37818d945d96c06b44af10e050d2ef7c4/commons-parent-69.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/9.7/asm-tree-9.7.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/9.7/a7c160e10239da3d67e35828c792392fbb101b6/asm-tree-9.7.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/apache/apache/31/apache-31.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.apache/apache/31/9009cbdad2b69835f2df9265794c8ab50cf4dce1/apache-31.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.10.1/gson-2.10.1.pom, /home/runner/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.10.1/ce159faf33c1e665e1f3a785a5d678a2b20151bc/gson-2.10.1.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/9.7/asm-analysis-9.7.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/9.7/e5c12f11d0ca92ac0e6b116086cce4ba1c1dd8db/asm-analysis-9.7.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/google/code/gson/gson-parent/2.10.1/gson-parent-2.10.1.pom, /home/runner/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson-parent/2.10.1/67ea6db077285dc50a9b0a627763764f0ef4a770/gson-parent-2.10.1.pom]
+Downloading https://dl.google.com/dl/android/maven2/com/android/tools/play-sdk-proto/31.9.1/play-sdk-proto-31.9.1.pom to /home/runner/.gradle/.tmp/gradle_download5089273285699825911bin
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/3.24.4/protobuf-java-3.24.4.pom, /home/runner/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java/3.24.4/3164850c430cda320f35ee27d46a4af35b3443e0/protobuf-java-3.24.4.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-parent/3.24.4/protobuf-parent-3.24.4.pom, /home/runner/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-parent/3.24.4/aa35558192f2b7ed4aee2eb04a26e62f3cb6a7a8/protobuf-parent-3.24.4.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-bom/3.24.4/protobuf-bom-3.24.4.pom, /home/runner/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-bom/3.24.4/85f9b6e6e89b3710678ac6694482fcad21202382/protobuf-bom-3.24.4.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/bouncycastle/bcpkix-jdk18on/1.79/bcpkix-jdk18on-1.79.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk18on/1.79/783d463a7227fea427268e34fb60d98475c64f19/bcpkix-jdk18on-1.79.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/javax/inject/javax.inject/1/javax.inject-1.pom, /home/runner/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/b8e00a8a0deb0ebef447570e37ff8146ccd92cbe/javax.inject-1.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/bouncycastle/bcprov-jdk18on/1.79/bcprov-jdk18on-1.79.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcprov-jdk18on/1.79/460bea0d2ddd8860efd4e7c3c7d8add1d749e940/bcprov-jdk18on-1.79.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/glassfish/jaxb/jaxb-runtime/2.3.2/jaxb-runtime-2.3.2.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/f46a0f023205138c366f0b0c9316f8663bb32a4f/jaxb-runtime-2.3.2.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/sun/xml/bind/mvn/jaxb-runtime-parent/2.3.2/jaxb-runtime-parent-2.3.2.pom, /home/runner/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind.mvn/jaxb-runtime-parent/2.3.2/b9916bbbf37042807a649a2a7fcb6b97e193c28a/jaxb-runtime-parent-2.3.2.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/sun/xml/bind/mvn/jaxb-parent/2.3.2/jaxb-parent-2.3.2.pom, /home/runner/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind.mvn/jaxb-parent/2.3.2/5d96ada92105844d8a2eedfb63bf782a712cc0a/jaxb-parent-2.3.2.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/sun/xml/bind/jaxb-bom-ext/2.3.2/jaxb-bom-ext-2.3.2.pom, /home/runner/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind/jaxb-bom-ext/2.3.2/7a92d12e31a67bae498f840c8f7c334a4fee0fbb/jaxb-bom-ext-2.3.2.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/glassfish/jaxb/jaxb-bom/2.3.2/jaxb-bom-2.3.2.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-bom/2.3.2/c7cd28b5d3871feba8cebf6d4587043fb0d6fd0a/jaxb-bom-2.3.2.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/eclipse/ee4j/project/1.0.5/project-1.0.5.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.eclipse.ee4j/project/1.0.5/d391c5ed15d8fb1dadba9c5d1017006d56c50332/project-1.0.5.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.16/fdcd45abd94151f990a359e1d367e325cfb50286/httpcore-4.4.16.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.21/commons-compress-1.21.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.21/f9f4f26a1ea08778cc818c1555587741605bb4da/commons-compress-1.21.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpmime/4.5.6/httpmime-4.5.6.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.5.6/b9dcad423fba1978379049cf0cf3cf535c667af7/httpmime-4.5.6.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core/4.4.16/httpcomponents-core-4.4.16.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcomponents-core/4.4.16/e0cbfde0384168cdd90e2633c1f101416d799090/httpcomponents-core-4.4.16.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/52/commons-parent-52.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-parent/52/4ee86dedc66d0010ccdc29e5a4ce014c057854/commons-parent-52.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-client/4.5.6/httpcomponents-client-4.5.6.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcomponents-client/4.5.6/135a0a91d1ad2909b08196580ef2c363932bb87e/httpcomponents-client-4.5.6.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-parent/11/httpcomponents-parent-11.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcomponents-parent/11/3ee7a841cc49326e8681089ea7ad6a3b81b88581/httpcomponents-parent-11.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-parent/10/httpcomponents-parent-10.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcomponents-parent/10/1ba3c5940f24525444492ae12b6a1015df8a477b/httpcomponents-parent-10.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/apache/apache/23/apache-23.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.apache/apache/23/404949e96725e63a10a6d8f9d9b521948d170d5/apache-23.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/apache/apache/21/apache-21.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.apache/apache/21/649b700a1b2b4a1d87e7ae8e3f47bfe101b2a4a5/apache-21.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/apache/apache/18/apache-18.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.apache/apache/18/bd408bbea3840f2c7f914b29403e39a90f84fd5f/apache-18.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/bouncycastle/bcutil-jdk18on/1.79/bcutil-jdk18on-1.79.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcutil-jdk18on/1.79/fcfc0f7305fbf2a4a1a1207887e8e1d230e9210d/bcutil-jdk18on-1.79.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/jakarta/xml/bind/jakarta.xml.bind-api/2.3.2/jakarta.xml.bind-api-2.3.2.pom, /home/runner/.gradle/caches/modules-2/files-2.1/jakarta.xml.bind/jakarta.xml.bind-api/2.3.2/6142021e7186bf29f5f7639b968cfe250ce086dd/jakarta.xml.bind-api-2.3.2.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/glassfish/jaxb/txw2/2.3.2/txw2-2.3.2.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/txw2/2.3.2/22d24b523eb02a955e8bfa7af6572207a3490482/txw2-2.3.2.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/sun/xml/bind/mvn/jaxb-txw-parent/2.3.2/jaxb-txw-parent-2.3.2.pom, /home/runner/.gradle/caches/modules-2/files-2.1/com.sun.xml.bind.mvn/jaxb-txw-parent/2.3.2/1f872b3cb7c49c35501651aab063659a9775f06a/jaxb-txw-parent-2.3.2.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/jakarta/xml/bind/jakarta.xml.bind-api-parent/2.3.2/jakarta.xml.bind-api-parent-2.3.2.pom, /home/runner/.gradle/caches/modules-2/files-2.1/jakarta.xml.bind/jakarta.xml.bind-api-parent/2.3.2/7be72e8345e33f747d5d813e313abd8df25f259e/jakarta.xml.bind-api-parent-2.3.2.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/sun/istack/istack-commons-runtime/3.0.8/istack-commons-runtime-3.0.8.pom, /home/runner/.gradle/caches/modules-2/files-2.1/com.sun.istack/istack-commons-runtime/3.0.8/fd5dfcff9a1f1e7e4371c6a998b74ee0e52bdc4a/istack-commons-runtime-3.0.8.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/sun/istack/istack-commons/3.0.8/istack-commons-3.0.8.pom, /home/runner/.gradle/caches/modules-2/files-2.1/com.sun.istack/istack-commons/3.0.8/3835dae3b9e529039b70bce883a1c7438713c295/istack-commons-3.0.8.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/sun/xml/fastinfoset/FastInfoset/1.2.16/FastInfoset-1.2.16.pom, /home/runner/.gradle/caches/modules-2/files-2.1/com.sun.xml.fastinfoset/FastInfoset/1.2.16/e4d2eed02e0e0a9f4c892e6d43bdf3dfdc1fa2ee/FastInfoset-1.2.16.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/sun/xml/fastinfoset/fastinfoset-project/1.2.16/fastinfoset-project-1.2.16.pom, /home/runner/.gradle/caches/modules-2/files-2.1/com.sun.xml.fastinfoset/fastinfoset-project/1.2.16/86113f7ee9a5d995429bf75294b57b31f0a17d29/fastinfoset-project-1.2.16.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/jakarta/activation/jakarta.activation-api/1.2.1/jakarta.activation-api-1.2.1.pom, /home/runner/.gradle/caches/modules-2/files-2.1/jakarta.activation/jakarta.activation-api/1.2.1/b9c1b2502949970360efe8d75ec5268d87d38a82/jakarta.activation-api-1.2.1.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/jvnet/staxex/stax-ex/1.8.1/stax-ex-1.8.1.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.jvnet.staxex/stax-ex/1.8.1/93132b1ebaf1c419ad3d2216924af39c68f43b51/stax-ex-1.8.1.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/sun/activation/all/1.2.1/all-1.2.1.pom, /home/runner/.gradle/caches/modules-2/files-2.1/com.sun.activation/all/1.2.1/efca912f55f71e63ab2eb82552519b66dd123f98/all-1.2.1.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/eclipse/ee4j/project/1.0.2/project-1.0.2.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.eclipse.ee4j/project/1.0.2/5730bedee1faaeeb62b0afc4ed1c4571f87a8eb4/project-1.0.2.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/sun/activation/javax.activation/1.2.0/javax.activation-1.2.0.pom, /home/runner/.gradle/caches/modules-2/files-2.1/com.sun.activation/javax.activation/1.2.0/bdb776ae9b888b7ad8f9f424b9e67837eae916c5/javax.activation-1.2.0.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/google/jimfs/jimfs/1.1/jimfs-1.1.pom, /home/runner/.gradle/caches/modules-2/files-2.1/com.google.jimfs/jimfs/1.1/380866e1e495f899631b6e1d437e4b0a69e4faa3/jimfs-1.1.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/sun/activation/all/1.2.0/all-1.2.0.pom, /home/runner/.gradle/caches/modules-2/files-2.1/com.sun.activation/all/1.2.0/9b1023e38195ea19d1a0ac79192d486da1904f97/all-1.2.0.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/google/jimfs/jimfs-parent/1.1/jimfs-parent-1.1.pom, /home/runner/.gradle/caches/modules-2/files-2.1/com.google.jimfs/jimfs-parent/1.1/2283f99a6aa73205190a20cfd35078e9f7d6cec9/jimfs-parent-1.1.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/net/java/jvnet-parent/1/jvnet-parent-1.pom, /home/runner/.gradle/caches/modules-2/files-2.1/net.java/jvnet-parent/1/b55a1b046dbe82acdee8edde7476eebcba1e57d8/jvnet-parent-1.pom]
+Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/org/apache/httpcomponents/httpclient/4.5.6/httpclient-4.5.6.pom]
+Downloading https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.5.6/httpclient-4.5.6.pom to /home/runner/.gradle/.tmp/gradle_download10416868884084142980bin
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.pom, /home/runner/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/75c03ba4b01932842a996ef8d3fc1ab61ddeac2/commons-logging-1.2.pom]
+Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/commons-codec/commons-codec/1.10/commons-codec-1.10.pom]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/34/commons-parent-34.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-parent/34/1f6be162a806d8343e3cd238dd728558532473a5/commons-parent-34.pom]
+Downloading https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.10/commons-codec-1.10.pom to /home/runner/.gradle/.tmp/gradle_download9153094418579401088bin
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/apache/apache/13/apache-13.pom, /home/runner/.gradle/caches/modules-2/files-2.1/org.apache/apache/13/15aff1faaec4963617f07dbe8e603f0adabc3a12/apache-13.pom]
+Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/org/apache/commons/commons-parent/35/commons-parent-35.pom]
+Downloading https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent/35/commons-parent-35.pom to /home/runner/.gradle/.tmp/gradle_download8627480092000902980bin
+Resource missing. [HTTP GET: https://dl.google.com/dl/android/maven2/org/apache/apache/15/apache-15.pom]
+Downloading https://repo.maven.apache.org/maven2/org/apache/apache/15/apache-15.pom to /home/runner/.gradle/.tmp/gradle_download8300085061991493281bin
+Downloading https://dl.google.com/dl/android/maven2/com/android/tools/lint/lint-gradle/31.9.1/lint-gradle-31.9.1.jar to /home/runner/.gradle/.tmp/gradle_download1878279256033887676bin
+Downloading https://dl.google.com/dl/android/maven2/com/android/tools/lint/lint-checks/31.9.1/lint-checks-31.9.1.jar to /home/runner/.gradle/.tmp/gradle_download10271993062431309603bin
+Downloading https://dl.google.com/dl/android/maven2/com/android/tools/lint/lint/31.9.1/lint-31.9.1.jar to /home/runner/.gradle/.tmp/gradle_download17599019960223469082bin
+Downloading https://dl.google.com/dl/android/maven2/com/android/tools/external/com-intellij/intellij-core/31.9.1/intellij-core-31.9.1.jar to /home/runner/.gradle/.tmp/gradle_download2245153399859525762bin
+Downloading https://dl.google.com/dl/android/maven2/com/android/tools/external/com-intellij/kotlin-compiler/31.9.1/kotlin-compiler-31.9.1.jar to /home/runner/.gradle/.tmp/gradle_download9612037773267989378bin
+Downloading https://dl.google.com/dl/android/maven2/com/android/tools/external/org-jetbrains/uast/31.9.1/uast-31.9.1.jar to /home/runner/.gradle/.tmp/gradle_download2086234662262033326bin
+Downloading https://repo.maven.apache.org/maven2/org/codehaus/groovy/groovy/3.0.22/groovy-3.0.22.jar to /home/runner/.gradle/.tmp/gradle_download3566947795112730870bin
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/google/jimfs/jimfs/1.1/jimfs-1.1.jar, /home/runner/.gradle/caches/modules-2/files-2.1/com.google.jimfs/jimfs/1.1/8fbd0579dc68aba6186935cc1bee21d2f3e7ec1c/jimfs-1.1.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/google/guava/guava/32.0.1-jre/guava-32.0.1-jre.jar, /home/runner/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/32.0.1-jre/6e5d51a72d142f2d40a57dfb897188b36a95b489/guava-32.0.1-jre.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/net/java/dev/jna/jna-platform/5.6.0/jna-platform-5.6.0.jar, /home/runner/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna-platform/5.6.0/d18424ffb8bbfd036d71bcaab9b546858f2ef986/jna-platform-5.6.0.jar]
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-reflect/2.1.0/kotlin-reflect-2.1.0.jar to /home/runner/.gradle/.tmp/gradle_download17841875066600115731bin
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk7/2.1.0/kotlin-stdlib-jdk7-2.1.0.jar, /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/2.1.0/d77bee6c7bc849e7b9bf4b83e94e8fd1dfc0ea8a/kotlin-stdlib-jdk7-2.1.0.jar]
+Downloading https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib/2.1.0/kotlin-stdlib-2.1.0.jar to /home/runner/.gradle/.tmp/gradle_download17481057940479672560bin
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/jetbrains/kotlin/kotlin-stdlib-jdk8/2.1.0/kotlin-stdlib-jdk8-2.1.0.jar, /home/runner/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk8/2.1.0/c4a51be16c840b969ed706bc25d5836b099d188a/kotlin-stdlib-jdk8-2.1.0.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/ow2/asm/asm-commons/9.7/asm-commons-9.7.jar, /home/runner/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-commons/9.7/e86dda4696d3c185fcc95d8d311904e7ce38a53f/asm-commons-9.7.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/ow2/asm/asm-analysis/9.7/asm-analysis-9.7.jar, /home/runner/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-analysis/9.7/e4a258b7eb96107106c0599f0061cfc1832fe07a/asm-analysis-9.7.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/ow2/asm/asm-tree/9.7/asm-tree-9.7.jar, /home/runner/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm-tree/9.7/e446a17b175bfb733b87c5c2560ccb4e57d69f1a/asm-tree-9.7.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.7/asm-9.7.jar, /home/runner/.gradle/caches/modules-2/files-2.1/org.ow2.asm/asm/9.7/73d7b3086e14beb604ced229c302feff6449723/asm-9.7.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar, /home/runner/.gradle/caches/modules-2/files-2.1/com.google.guava/failureaccess/1.0.1/1dcf1de382a0bf95a3d8b0849546c88bac1292c9/failureaccess-1.0.1.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar, /home/runner/.gradle/caches/modules-2/files-2.1/com.google.guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/b421526c5f297295adef1c886e5246c39d4ac629/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar, /home/runner/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/checkerframework/checker-qual/3.33.0/checker-qual-3.33.0.jar, /home/runner/.gradle/caches/modules-2/files-2.1/org.checkerframework/checker-qual/3.33.0/de2b60b62da487644fc11f734e73c8b0b431238f/checker-qual-3.33.0.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/google/errorprone/error_prone_annotations/2.18.0/error_prone_annotations-2.18.0.jar, /home/runner/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.18.0/89b684257096f548fa39a7df9fdaa409d4d4df91/error_prone_annotations-2.18.0.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8.jar, /home/runner/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/2.8/c85270e307e7b822f1086b93689124b89768e273/j2objc-annotations-2.8.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/net/java/dev/jna/jna/5.6.0/jna-5.6.0.jar, /home/runner/.gradle/caches/modules-2/files-2.1/net.java.dev.jna/jna/5.6.0/330f2244e9030119ab3030fc3fededc86713d9cc/jna-5.6.0.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/commons-io/commons-io/2.16.1/commons-io-2.16.1.jar, /home/runner/.gradle/caches/modules-2/files-2.1/commons-io/commons-io/2.16.1/377d592e740dc77124e0901291dbfaa6810a200e/commons-io-2.16.1.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/net/sf/kxml/kxml2/2.3.0/kxml2-2.3.0.jar, /home/runner/.gradle/caches/modules-2/files-2.1/net.sf.kxml/kxml2/2.3.0/ccbc77a5fd907ef863c29f3596c6f54ffa4e9442/kxml2-2.3.0.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar, /home/runner/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.10.1/b3add478d4382b78ea20b1671390a858002feb6c/gson-2.10.1.jar]
+Downloading https://dl.google.com/dl/android/maven2/com/android/tools/play-sdk-proto/31.9.1/play-sdk-proto-31.9.1.jar to /home/runner/.gradle/.tmp/gradle_download17724708508744465667bin
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java/3.24.4/protobuf-java-3.24.4.jar, /home/runner/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java/3.24.4/a773e5a3845e6baa5c4ede5532c426ebe6c53330/protobuf-java-3.24.4.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/javax/inject/javax.inject/1/javax.inject-1.jar, /home/runner/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/bouncycastle/bcutil-jdk18on/1.79/bcutil-jdk18on-1.79.jar, /home/runner/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcutil-jdk18on/1.79/ecfc5aef97cc7676ea0de5c53c407b9f533f0ad5/bcutil-jdk18on-1.79.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/bouncycastle/bcpkix-jdk18on/1.79/bcpkix-jdk18on-1.79.jar, /home/runner/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk18on/1.79/7693cec3b8779b74b35466dcaeeaac7409872954/bcpkix-jdk18on-1.79.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/glassfish/jaxb/jaxb-runtime/2.3.2/jaxb-runtime-2.3.2.jar, /home/runner/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.2/5528bc882ea499a09d720b42af11785c4fc6be2a/jaxb-runtime-2.3.2.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/bouncycastle/bcprov-jdk18on/1.79/bcprov-jdk18on-1.79.jar, /home/runner/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcprov-jdk18on/1.79/4d8e2732bcee15f1db93df266c3f5b70ce5cac21/bcprov-jdk18on-1.79.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.21/commons-compress-1.21.jar, /home/runner/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-compress/1.21/4ec95b60d4e86b5c95a0e919cb172a0af98011ef/commons-compress-1.21.jar]
+Downloading https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpclient/4.5.6/httpclient-4.5.6.jar to /home/runner/.gradle/.tmp/gradle_download3821484331365648014bin
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpmime/4.5.6/httpmime-4.5.6.jar, /home/runner/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.5.6/164343da11db817e81e24e0d9869527e069850c9/httpmime-4.5.6.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar, /home/runner/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpcore/4.4.16/51cf043c87253c9f58b539c9f7e44c8894223850/httpcore-4.4.16.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/jvnet/staxex/stax-ex/1.8.1/stax-ex-1.8.1.jar, /home/runner/.gradle/caches/modules-2/files-2.1/org.jvnet.staxex/stax-ex/1.8.1/78011e483a21102fb4858f3e8f269a677e50aa23/stax-ex-1.8.1.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/jakarta/xml/bind/jakarta.xml.bind-api/2.3.2/jakarta.xml.bind-api-2.3.2.jar, /home/runner/.gradle/caches/modules-2/files-2.1/jakarta.xml.bind/jakarta.xml.bind-api/2.3.2/8d49996a4338670764d7ca4b85a1c4ccf7fe665d/jakarta.xml.bind-api-2.3.2.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/org/glassfish/jaxb/txw2/2.3.2/txw2-2.3.2.jar, /home/runner/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/txw2/2.3.2/ce5be7da2e442c25ec14c766cb60cb802741727b/txw2-2.3.2.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/sun/istack/istack-commons-runtime/3.0.8/istack-commons-runtime-3.0.8.jar, /home/runner/.gradle/caches/modules-2/files-2.1/com.sun.istack/istack-commons-runtime/3.0.8/d6a97364045aa6b99bf2d3c566a3f98599c2d296/istack-commons-runtime-3.0.8.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/jakarta/activation/jakarta.activation-api/1.2.1/jakarta.activation-api-1.2.1.jar, /home/runner/.gradle/caches/modules-2/files-2.1/jakarta.activation/jakarta.activation-api/1.2.1/562a587face36ec7eff2db7f2fc95425c6602bc1/jakarta.activation-api-1.2.1.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/sun/activation/javax.activation/1.2.0/javax.activation-1.2.0.jar, /home/runner/.gradle/caches/modules-2/files-2.1/com.sun.activation/javax.activation/1.2.0/bf744c1e2776ed1de3c55c8dac1057ec331ef744/javax.activation-1.2.0.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/com/sun/xml/fastinfoset/FastInfoset/1.2.16/FastInfoset-1.2.16.jar, /home/runner/.gradle/caches/modules-2/files-2.1/com.sun.xml.fastinfoset/FastInfoset/1.2.16/4eb6a0adad553bf759ffe86927df6f3b848c8bea/FastInfoset-1.2.16.jar]
+Found locally available resource with matching checksum: [https://repo.maven.apache.org/maven2/commons-logging/commons-logging/1.2/commons-logging-1.2.jar, /home/runner/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/4bfc12adfe4842bf07b657f0369c4cb522955686/commons-logging-1.2.jar]
+Downloading https://repo.maven.apache.org/maven2/commons-codec/commons-codec/1.10/commons-codec-1.10.jar to /home/runner/.gradle/.tmp/gradle_download6568424293249178058bin
+Downloading https://dl.google.com/dl/android/maven2/com/android/tools/lint/lint-api/31.9.1/lint-api-31.9.1.jar to /home/runner/.gradle/.tmp/gradle_download844629278152173691bin
+Build cache key for task ':app:lintVitalAnalyzeMainlineRelease' is ffafb0448c6467651e8ec6552a081ed5
+Task ':app:lintVitalAnalyzeMainlineRelease' is not up-to-date because:
+  No history is available.
+Android Lint: Creating lint class loader 31.9.1_false
+Stored cache entry for task ':app:lintVitalAnalyzeMainlineRelease' with cache key ffafb0448c6467651e8ec6552a081ed5
+Resolve mutations for :app:lintVitalReportMainlineRelease (Thread[#158,Execution worker,5,main]) started.
+:app:lintVitalReportMainlineRelease (Thread[#159,Execution worker Thread 2,5,main]) started.
+
+> Task :app:lintVitalReportMainlineRelease
+Caching disabled for task ':app:lintVitalReportMainlineRelease' because:
+  Caching has been disabled for the task
+Task ':app:lintVitalReportMainlineRelease' is not up-to-date because:
+  No history is available.
+Android Lint: Reusing lint classloader 31.9.1_false
+Resolve mutations for :app:lintVitalMainlineRelease (Thread[#159,Execution worker Thread 2,5,main]) started.
+:app:lintVitalMainlineRelease (Thread[#159,Execution worker Thread 2,5,main]) started.
+
+> Task :app:lintVitalMainlineRelease
+Caching disabled for task ':app:lintVitalMainlineRelease' because:
+  Caching has been disabled for the task
+Task ':app:lintVitalMainlineRelease' is not up-to-date because:
+  Task.upToDateWhen is false.
+
+> Task :app:minifyMainlineReleaseWithR8
+Stored cache entry for task ':app:minifyMainlineReleaseWithR8' with cache key 543308a115c05580e6462fd2cb360ee9
+Resolve mutations for :app:compileMainlineReleaseArtProfile (Thread[#157,included builds,5,main]) started.
+:app:compileMainlineReleaseArtProfile (Thread[#157,included builds,5,main]) started.
+Resolve mutations for :app:buildMainlineReleasePreBundle (Thread[#159,Execution worker Thread 2,5,main]) started.
+:app:buildMainlineReleasePreBundle (Thread[#159,Execution worker Thread 2,5,main]) started.
+
+> Task :app:compileMainlineReleaseArtProfile
+Build cache key for task ':app:compileMainlineReleaseArtProfile' is 965649e96d237fbe478d507f4a561bde
+Task ':app:compileMainlineReleaseArtProfile' is not up-to-date because:
+  No history is available.
+Stored cache entry for task ':app:compileMainlineReleaseArtProfile' with cache key 965649e96d237fbe478d507f4a561bde
+
+> Task :app:buildMainlineReleasePreBundle
+Caching disabled for task ':app:buildMainlineReleasePreBundle' because:
+  Caching has been disabled for the task
+Task ':app:buildMainlineReleasePreBundle' is not up-to-date because:
+  No history is available.
+Resolve mutations for :app:packageMainlineRelease (Thread[#159,Execution worker Thread 2,5,main]) started.
+:app:packageMainlineRelease (Thread[#159,Execution worker Thread 2,5,main]) started.
+Resolve mutations for :app:packageMainlineReleaseBundle (Thread[#157,included builds,5,main]) started.
+:app:packageMainlineReleaseBundle (Thread[#158,Execution worker,5,main]) started.
+
+> Task :app:packageMainlineRelease
+Custom actions are attached to task ':app:packageMainlineRelease'.
+Caching disabled for task ':app:packageMainlineRelease' because:
+  Caching has been disabled for the task
+Task ':app:packageMainlineRelease' is not up-to-date because:
+  No history is available.
+The input changes require a full rebuild for incremental task ':app:packageMainlineRelease'.
+
+> Task :app:packageMainlineReleaseBundle
+Caching disabled for task ':app:packageMainlineReleaseBundle' because:
+  Caching has been disabled for the task
+Task ':app:packageMainlineReleaseBundle' is not up-to-date because:
+  No history is available.
+Resolve mutations for :app:signMainlineReleaseBundle (Thread[#158,Execution worker,5,main]) started.
+:app:signMainlineReleaseBundle (Thread[#158,Execution worker,5,main]) started.
+
+> Task :app:signMainlineReleaseBundle
+Caching disabled for task ':app:signMainlineReleaseBundle' because:
+  Caching has been disabled for the task
+Task ':app:signMainlineReleaseBundle' is not up-to-date because:
+  No history is available.
+
+Resolve mutations for :app:createMainlineReleaseApkListingFileRedirect (Thread[#160,Execution worker Thread 3,5,main]) started.
+:app:createMainlineReleaseApkListingFileRedirect (Thread[#160,Execution worker Thread 3,5,main]) started.
+
+> Task :app:createMainlineReleaseApkListingFileRedirect
+Caching disabled for task ':app:createMainlineReleaseApkListingFileRedirect' because:
+  Caching has been disabled for the task
+Task ':app:createMainlineReleaseApkListingFileRedirect' is not up-to-date because:
+  No history is available.
+Resolve mutations for :app:assembleMainlineRelease (Thread[#159,Execution worker Thread 2,5,main]) started.
+:app:assembleMainlineRelease (Thread[#157,included builds,5,main]) started.
+
+> Task :app:assembleMainlineRelease
+Skipping task ':app:assembleMainlineRelease' as it has no actions.
+Resolve mutations for :app:produceMainlineReleaseBundleIdeListingFile (Thread[#158,Execution worker,5,main]) started.
+:app:produceMainlineReleaseBundleIdeListingFile (Thread[#158,Execution worker,5,main]) started.
+
+> Task :app:produceMainlineReleaseBundleIdeListingFile
+Caching disabled for task ':app:produceMainlineReleaseBundleIdeListingFile' because:
+  Fast task
+Task ':app:produceMainlineReleaseBundleIdeListingFile' is not up-to-date because:
+  No history is available.
+Resolve mutations for :app:createMainlineReleaseBundleListingFileRedirect (Thread[#158,Execution worker,5,main]) started.
+:app:createMainlineReleaseBundleListingFileRedirect (Thread[#158,Execution worker,5,main]) started.
+
+> Task :app:createMainlineReleaseBundleListingFileRedirect
+Caching disabled for task ':app:createMainlineReleaseBundleListingFileRedirect' because:
+  Caching has been disabled for the task
+Task ':app:createMainlineReleaseBundleListingFileRedirect' is not up-to-date because:
+  No history is available.
+Resolve mutations for :app:bundleMainlineRelease (Thread[#158,Execution worker,5,main]) started.
+:app:bundleMainlineRelease (Thread[#158,Execution worker,5,main]) started.
+
+> Task :app:bundleMainlineRelease
+Skipping task ':app:bundleMainlineRelease' as it has no actions.
+Resolve mutations for :app:copyMainlineReleaseOutputs (Thread[#158,Execution worker,5,main]) started.
+:app:copyMainlineReleaseOutputs (Thread[#158,Execution worker,5,main]) started.
+
+> Task :app:copyMainlineReleaseOutputs
+Caching disabled for task ':app:copyMainlineReleaseOutputs' because:
+  Not worth caching
+Task ':app:copyMainlineReleaseOutputs' is not up-to-date because:
+  No history is available.
+AAPT2 aapt2-8.9.1-12782657-linux Daemon #0: shutdown
+Android Lint: Disposing Uast application environment in lint classloader [31.9.1_false]
+
+[Incubating] Problems report is available at: file:///home/runner/work/Fritchii/Fritchii/src/android/build/reports/problems/problems-report.html
+
+BUILD SUCCESSFUL in 5m 2s
+68 actionable tasks: 54 executed, 14 up-to-date
+-- Done! APK and AAB artifacts are in /home/runner/work/Fritchii/Fritchii/artifacts
+total 76860
+-rw-r--r-- 1 runner runner 47519499 Nov 10 16:04 app-mainline-release.aab
+-rw-r--r-- 1 runner runner 31181566 Nov 10 16:04 app-mainline-release.apk
